@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lisboa · 13–18 octubre 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --azul:#14457C;
+  --azul-hondo:#0D2E54;
+  --azul-suave:#5A8AC0;
+  --vidro:#E9F0F5;
+  --papel:#FFFFFF;
+  --tinta:#0F2338;
+  --tinta-suave:#4C6076;
+  --amarelo:#E3A21A;
+  --pedra:#C3D0DB;
+  --verde:#2E7D5B;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--vidro);
+  color:var(--tinta);
+  font-family:'Karla',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:940px;margin:0 auto;padding:0 18px 80px}
+
+header{
+  background:var(--azul);color:#fff;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><g fill='none' stroke='%23ffffff' stroke-opacity='0.13' stroke-width='1.4'><path d='M30 2 L58 30 L30 58 L2 30 Z'/><circle cx='30' cy='30' r='9'/><path d='M0 0 L12 12 M60 0 L48 12 M0 60 L12 48 M60 60 L48 48'/></g></svg>");
+  background-size:60px 60px;
+}
+.hero{max-width:940px;margin:0 auto;padding:44px 18px 38px}
+.hero h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(2.8rem,9vw,4.6rem);line-height:.95;margin:0 0 10px;letter-spacing:-.02em}
+.hero .fechas{font-size:1.05rem;font-weight:500;color:#DCE8F3;margin:0 0 22px}
+.hero .quienes{display:flex;flex-wrap:wrap;gap:8px}
+.quienes span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);padding:4px 12px;border-radius:100px;font-size:.85rem;font-weight:500}
+.vuelos-hero{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.25);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;font-size:.88rem;color:#D6E4F1}
+.vuelos-hero b{display:block;color:#fff;font-size:1rem;font-weight:600}
+
+nav{position:sticky;top:0;z-index:20;background:var(--azul-hondo);overflow-x:auto;-webkit-overflow-scrolling:touch;box-shadow:0 2px 10px rgba(15,35,56,.2)}
+.navin{display:flex;max-width:940px;margin:0 auto;padding:0 8px;min-width:max-content}
+nav button{background:none;border:0;cursor:pointer;color:#A9C3DD;font-family:'Karla',sans-serif;font-size:.92rem;font-weight:600;padding:14px 15px 12px;border-bottom:3px solid transparent;white-space:nowrap}
+nav button .dia{display:block;font-size:.72rem;font-weight:500;opacity:.8}
+nav button:hover{color:#fff}
+nav button.on{color:#fff;border-bottom-color:var(--amarelo)}
+nav.nav1{background:var(--tinta);box-shadow:none;top:auto;position:relative;z-index:21}
+nav.nav1 button{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:600;padding:12px 20px 10px;color:#7E93A8;border-bottom-width:4px}
+nav.nav1 button.on{color:#fff;border-bottom-color:#fff}
+nav.nav1 button.pendiente{color:#55697C;font-style:italic}
+nav button:focus-visible{outline:2px solid var(--amarelo);outline-offset:-4px}
+
+.panel{display:none;padding-top:34px}
+.panel.on{display:block}
+.titulo{font-family:'Fraunces',Georgia,serif;font-size:2rem;font-weight:600;line-height:1.1;margin:0 0 6px;color:var(--azul-hondo)}
+.bajada{color:var(--tinta-suave);margin:0 0 8px;max-width:62ch}
+.marca{display:inline-block;margin-bottom:26px;font-size:.8rem;font-weight:700;color:var(--azul);background:#fff;border:1px solid var(--pedra);padding:3px 10px;border-radius:4px}
+.marca.duro{color:#9A4B12;border-color:#E8C9A8;background:#FDF3E7}
+.marca.clima{margin-left:8px;color:var(--azul-hondo);border-color:var(--azul-suave);background:#EFF6FB;font-weight:600}
+
+.tl{position:relative;margin:0;padding:0 0 0 76px;list-style:none}
+.tl:before{content:'';position:absolute;left:60px;top:10px;bottom:26px;width:2px;background:var(--pedra)}
+.tl li{position:relative;margin-bottom:16px}
+.hora{position:absolute;left:-76px;top:14px;width:48px;text-align:right;font-size:.82rem;font-weight:700;color:var(--azul);font-variant-numeric:tabular-nums}
+.tl li:before{content:'';position:absolute;left:-20px;top:19px;width:11px;height:11px;border-radius:50%;background:#fff;border:2px solid var(--azul-suave);z-index:2}
+.tl li.comida:before{background:var(--amarelo);border-color:var(--amarelo)}
+.card{background:var(--papel);border:1px solid var(--pedra);border-radius:8px;overflow:hidden}
+.cuerpo{padding:14px 16px}
+.card h3{margin:0 0 4px;font-size:1.05rem;font-weight:700;line-height:1.3}
+.card p{margin:0;color:var(--tinta-suave);font-size:.93rem}
+li.comida .card{border-left:5px solid var(--amarelo)}
+.tipo{font-size:.72rem;font-weight:700;color:#8A6410;margin-bottom:2px}
+.sitio{font-size:.85rem;color:var(--tinta-suave);margin-top:6px}
+.alerta{margin-top:8px;background:#FDF3E7;border-left:3px solid var(--amarelo);padding:8px 11px;font-size:.87rem;color:#6E4A08;border-radius:0 4px 4px 0}
+.suplente{margin-top:8px;font-size:.85rem;color:var(--tinta-suave);border-top:1px dashed var(--pedra);padding-top:7px}
+
+.foto{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--vidro);border-bottom:1px solid var(--pedra)}
+.sinfoto{display:none;width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,var(--azul) 0%,var(--azul-suave) 100%);color:#fff;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:1.3rem;text-align:center;padding:0 20px}
+.pie{padding:7px 16px 0;font-size:.8rem;color:var(--tinta-suave);font-style:italic}
+.historia{margin-top:10px;padding-top:10px;border-top:1px solid var(--vidro);font-size:.91rem;color:var(--tinta-suave)}
+.historia b{color:var(--azul);font-weight:700}
+
+.barra{background:var(--papel);border:1px solid var(--pedra);border-radius:8px;padding:14px 16px;margin-bottom:24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.barra .conteo{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:600;color:var(--azul)}
+.progreso{flex:1;min-width:160px;height:8px;background:var(--vidro);border-radius:100px;overflow:hidden}
+.progreso i{display:block;height:100%;background:var(--verde);width:0;transition:width .25s ease}
+.grupo{margin-bottom:28px}
+.grupo > h3{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:600;color:var(--azul-hondo);margin:0 0 4px}
+.grupo > .nota{color:var(--tinta-suave);font-size:.9rem;margin:0 0 12px}
+.item{display:flex;gap:12px;align-items:flex-start;background:var(--papel);border:1px solid var(--pedra);border-radius:8px;padding:12px 14px;margin-bottom:8px;cursor:pointer}
+.item input{margin-top:4px;width:19px;height:19px;accent-color:var(--verde);cursor:pointer;flex:none}
+.item .que{font-weight:700}
+.item .como{font-size:.88rem;color:var(--tinta-suave)}
+.item.listo{background:#F2F8F5;border-color:#B9DCC9}
+.item.listo .que{text-decoration:line-through;color:var(--tinta-suave)}
+
+.bloque{background:var(--papel);border:1px solid var(--pedra);border-radius:8px;padding:18px 20px;margin-bottom:18px}
+.bloque h3{font-family:'Fraunces',serif;font-size:1.2rem;margin:0 0 12px;color:var(--azul-hondo)}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--vidro);vertical-align:top}
+th{color:var(--tinta-suave);font-weight:600;width:38%}
+.falta{color:#9A4B12;font-style:italic}
+.costos input{width:110px;padding:6px 8px;border:1px solid var(--pedra);border-radius:5px;font-family:'Karla',sans-serif;font-size:.92rem;text-align:right;color:var(--tinta)}
+.costos td:last-child{text-align:right}
+.total{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;color:var(--azul)}
+ul.limpia{margin:0;padding-left:20px;color:var(--tinta-suave);font-size:.93rem}
+ul.limpia li{margin-bottom:6px}
+ul.limpia b{color:var(--tinta)}
+footer{max-width:940px;margin:40px auto 0;padding:20px 18px;border-top:1px solid var(--pedra);color:var(--tinta-suave);font-size:.85rem}
+footer a{color:var(--azul)}
+@media (max-width:620px){
+  .tl{padding-left:52px}
+  .tl:before{left:40px}
+  .hora{left:-52px;width:34px;font-size:.75rem}
+  .tl li:before{left:-16px}
+}
+@media print{
+  nav,.barra{display:none}
+  .panel{display:block!important;page-break-after:always;padding-top:20px}
+  body{background:#fff}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hero">
+    <h1 id="h-titulo">Lisboa</h1>
+    <p class="fechas" id="h-fechas"></p>
+    <div class="quienes"><span>Katehrine</span><span>Angie</span><span>Mila</span></div>
+    <div class="vuelos-hero" id="h-datos"></div>
+  </div>
+</header>
+
+<nav class="nav1"><div class="navin" id="nav1"></div></nav>
+<nav><div class="navin" id="nav"></div></nav>
+<div class="wrap" id="paneles"></div>
+
+<footer>
+  Viaje Lisboa · Roma · Pordenone · Cantón · Shanghái, octubre y noviembre de 2026.<br>
+  Los puntos marcados <span class="falta">[verificar]</span> requieren confirmación antes de reservar.<br>
+  Fotografías: Wikimedia Commons, bajo licencias Creative Commons.
+</footer>
+
+<script>
+const CLIMA = {
+  d13:"22° / 16° · templado, puede llover",
+  d14:"22° / 16° · brisa del río en Belém",
+  d15:"21° / 15° · VIENTO FUERTE en la costa",
+  d16:"22° / 16° · templado",
+  d17:"20° / 13° · más fresco al norte",
+  d18:"22° / 16° · templado",
+  i18:"22° / 12° · agradable, noches frescas",
+  i19:"22° / 12° · sol, noche fresca",
+  i20:"22° / 12° · en terraza de noche hace frío",
+  i21:"17° / 8° · Friuli es MUCHO más frío",
+  i22:"17° / 8° · frío y húmedo",
+  i23:"17° / 8° · frío en la mañana",
+  i24:"21° / 12° · Roma templado",
+  c25:"29° / 21° · calor y humedad alta",
+  c26:"29° / 21° · bochorno, recinto con aire",
+  c27:"29° / 21° · calor y humedad",
+  c28:"28° / 20° · calor, planta industrial",
+  c29:"28° / 20° · calor, planta industrial",
+  c30:"28° / 20° · calor, día largo en carretera",
+  c31:"28° / 20° · calor, zona portuaria",
+  c01:"de 28° a 18° en un vuelo",
+  c02:"18° / 11° · fresco, viento en el río",
+  c03:"18° / 11° · fresco",
+  c04:"18° / 10° · fresco, día entero al aire libre",
+  c05:"18° / 10° · fresco",
+  c06:"17° / 10° · fresco"
+};
+
+const LISBOA = [
+{
+  id:"d13", nav:"13", dow:"Martes",
+  titulo:"Llegada y Baixa",
+  bajada:"Medio día. Todo plano y en bajada desde el hotel. El regreso siempre en taxi.",
+  marca:"Sin excursión · caminata suave",
+  items:[
+    {h:"10:50", t:"Llegada · Aeropuerto Humberto Delgado", d:"Vuelo TP 3185. Traslado privado con cartel de nombre. 20 minutos al hotel."},
+    {h:"12:00", t:"Check-in · NH Collection Lisboa Liberdade", d:"Pedir entrada temprana por escrito desde ahora. Si la habitación no está lista, dejan maletas y salen a almorzar."},
+    {h:"14:00", tipo:"Almuerzo", comida:true, t:"Cervejaria Liberdade", d:"Marisquería en la propia Avenida, a pasos del hotel. Pescado y marisco a la portuguesa: primer almuerzo sin traslados ni esfuerzo.", sitio:"Avenida da Liberdade · Hotel Tivoli",
+     historia:"La <b>Avenida da Liberdade</b> se abrió en 1879 imitando los bulevares de París, sobre el antiguo Passeio Público del siglo XVIII, que era un jardín cercado solo para la aristocracia. Hoy es la calle más cara de Portugal y la de las marcas de lujo."},
+    {h:"16:00", t:"Baixa · Rua Augusta · Praça do Comércio", d:"Se baja caminando la Avenida completa, siempre en descenso, hasta la plaza frente al río. Calle peatonal de tiendas y el arco de triunfo.",
+     img:"Arco Triunfal da Rua Augusta, Plaza del Comercio, Lisboa, Portugal, 2012-05-12, DD 02.JPG",
+     pie:"Arco de la Rua Augusta visto desde la Praça do Comércio",
+     alerta:"De regreso, taxi. La Avenida de subida no es para Mila.",
+     historia:"Aquí estuvo durante 250 años el <b>Palacio Real</b>, hasta que el terremoto del 1 de noviembre de 1755 —seguido de tsunami e incendio— borró el centro de Lisboa y mató a decenas de miles de personas. El Marqués de Pombal reconstruyó todo el barrio en cuadrícula y, por primera vez en Europa, con un sistema antisísmico: la <b>gaiola pombalina</b>, una jaula de madera embebida en los muros que hace flexible al edificio. El arco que remata la Rua Augusta se terminó recién en 1873, más de cien años después."},
+    {h:"20:00", tipo:"Cena", comida:true, t:"Cantinho do Avillez", d:"El bistró informal de José Avillez en Chiado. Cocina portuguesa moderna sin la formalidad de un menú degustación: exactamente lo que se quiere después de un vuelo transatlántico.", sitio:"Rua dos Duques de Bragança 7, Chiado", alerta:"Reservar. No poner Belcanto este día: llegan cansadas."}
+  ]
+},
+{
+  id:"d14", nav:"14", dow:"Miércoles",
+  titulo:"Belém y el río Tajo",
+  bajada:"El barrio más plano de Lisboa y los dos monumentos más fotografiados del país.",
+  marca:"Terreno plano todo el día",
+  items:[
+    {h:"09:00", t:"Taxi a Belém", d:"15 a 20 minutos por la ribera."},
+    {h:"09:30", t:"Mosteiro dos Jerónimos", d:"Monasterio del siglo XVI. Lo que hay que ver es el claustro de piedra tallada, que parece encaje. Con entrada comprada antes se evita la fila larga.",
+     img:"Lisboa - Mosteiro dos Jerónimos - Claustro.jpg",
+     pie:"El claustro manuelino, dos pisos de piedra calada",
+     historia:"Lo mandó construir el rey <b>Manuel I en 1501</b>, en el sitio exacto donde Vasco da Gama y sus hombres pasaron la noche rezando antes de zarpar hacia la India en 1497. Se pagó con el impuesto de la pimienta: el 5% de todo lo que entraba del comercio de especias. Tardó cien años en terminarse y dio nombre a un estilo propio, el <b>manuelino</b>, donde la piedra imita cuerdas, nudos marinos, corales y esferas armilares. Dentro están las tumbas de Vasco da Gama y del poeta Camões. Patrimonio de la Humanidad desde 1983."},
+    {h:"11:00", tipo:"Dulce", comida:true, t:"Pastéis de Belém", d:"Se piden calientes, con canela y azúcar glas por encima. Se come aquí, no en otro sitio.",
+     historia:"Los inventaron los <b>monjes del propio monasterio</b>, que usaban clara de huevo para almidonar los hábitos y les sobraban montañas de yemas. Cuando en 1834 Portugal cerró los conventos, los monjes vendieron la receta a la refinería de azúcar de al lado, que abrió la tienda en <b>1837</b>. La fórmula sigue siendo secreta: se prepara en una sala cerrada y solo un puñado de maestros la conoce."},
+    {h:"12:00", t:"Padrão dos Descobrimentos", d:"El monumento de los navegantes asomado al río, con la rosa de los vientos en el piso enfrente."},
+    {h:"12:30", t:"Torre de Belém", d:"La torre fortificada dentro del agua.",
+     img:"Torre de Belém, Lisboa, Portugal, 2012-05-12, DD 01.JPG",
+     pie:"Torre de Belém, guardiana de la entrada del Tajo",
+     alerta:"La subida interior es escalera de caracol estrecha y de un solo sentido. Se ve por fuera; Mila espera en el jardín.",
+     historia:"Construida entre <b>1514 y 1519</b> para defender la entrada del puerto, cuando Lisboa era la capital más rica de Europa. Originalmente estaba sobre un islote en medio del río; fue el terremoto de 1755 el que cambió el cauce y la dejó pegada a la orilla. La diseñó Francisco de Arruda, que había trabajado en el norte de África, y por eso tiene cupulillas y detalles de aire morisco. En la fachada hay un rinoceronte tallado, el primero que se vio en Europa, regalo de un rey de la India al rey Manuel I."},
+    {h:"13:30", tipo:"Almuerzo", comida:true, t:"SUD Lisboa Terrazza", d:"Terraza frente al río, al lado del MAAT. Encaja exacto en el recorrido y da el descanso largo del mediodía.", sitio:"Belém, junto al MAAT", alerta:"Reservar mesa en terraza, no en salón."},
+    {h:"15:30", t:"MAAT", d:"Museo de arte, arquitectura y tecnología, inaugurado en 2016 y diseñado por la arquitecta Amanda Levete. El techo ondulado se camina por encima y da la mejor vista del puente 25 de Abril. Al lado está la antigua Central Tejo, la central eléctrica de 1908 que alumbraba la ciudad."},
+    {h:"17:00", t:"Regreso y descanso en el hotel", d:"Dos horas antes de la cena. El día 15 arranca a las 8:30."},
+    {h:"19:30", tipo:"Cena", comida:true, t:"Belcanto", d:"Dos estrellas Michelin, José Avillez, en Chiado. Es la cena grande del viaje. Menú degustación.", sitio:"Rua Serpa Pinto 10A, Chiado · belcanto.pt",
+     alerta:"Abre de martes a sábado. Piden tarjeta de crédito al reservar y llaman para confirmar: si no lo logran con 48 horas de antelación, cancelan la mesa.",
+     suplente:"Suplentes si no hay mesa: Alma, en Chiado (debita 130 € por persona si no asisten), o Feitoria, en Belém."}
+  ]
+},
+{
+  id:"d15", nav:"15", dow:"Jueves",
+  titulo:"Sintra, Cabo da Roca y Cascais",
+  bajada:"Día completo con chofer privado. Palacio en la montaña por la mañana, quads y Atlántico por la tarde.",
+  marca:"El día más largo · único con subida real",
+  marcaDuro:true,
+  items:[
+    {h:"08:30", t:"Salida con chofer", d:"40 minutos a Sintra. Entre semana es decisivo: en fin de semana Pena es inviable."},
+    {h:"09:30", t:"Palácio da Pena", d:"Palacio romántico pintado de amarillo, rojo y azul, sobre el cerro más alto de la sierra.",
+     img:"Sintra Portugal Palácio da Pena-01.jpg",
+     pie:"Palácio da Pena, en lo alto de la sierra de Sintra",
+     alerta:"Del portón a la puerta del palacio hay subida fuerte. Se usa el autobús interno del parque, que se paga aparte.",
+     historia:"Arriba había un monasterio de monjes jerónimos del siglo XVI que el terremoto de 1755 dejó en ruinas. En <b>1838</b> el rey consorte <b>Fernando II</b>, alemán de nacimiento y enamorado del romanticismo, compró las ruinas y levantó encima este palacio de cuento: mezcla a propósito lo morisco, lo gótico, lo manuelino y lo renacentista, todo pintado de colores fuertes. Fue el primer palacio romántico de Europa, anterior al Neuschwanstein bávaro. Los colores originales se habían perdido bajo una capa gris y se recuperaron en los años noventa. Sintra entera es Patrimonio de la Humanidad desde 1995; Lord Byron la llamó un Edén glorioso."},
+    {h:"11:30", t:"Centro histórico de Sintra · Piriquita", d:"Calles del pueblo y la pastelería de 1862 donde se comen los travesseiros, hojaldre relleno de crema de almendra, y las queijadas."},
+    {h:"13:00", tipo:"Almuerzo", comida:true, t:"Cascais · frente al mar", d:"Almuerzo sin reserva, se elige al llegar. Paseo marítimo plano y playas urbanas.", sitio:"Bahía de Cascais",
+     alerta:"Primer día de playa. En octubre el agua está fría para bañarse, pero la costa se camina perfecto. Comer con calma pero sin alargarse: a las 15:00 son los quads.",
+     historia:"Era un pueblo de pescadores hasta que en <b>1870 el rey Luís I</b> decidió pasar aquí los veranos e instaló el palacio real de la Ciudadela. Detrás vino toda la aristocracia portuguesa, y con ella el primer alumbrado eléctrico del país. Durante la Segunda Guerra Mundial, con Portugal neutral, Cascais y Estoril se llenaron de realeza europea en el exilio, refugiados y espías de los dos bandos: de ese ambiente salió el primer James Bond de Ian Fleming."},
+    {h:"15:00", tipo:"Aventura", comida:true, t:"Quads · Guincho Adventours", d:"Dos horas en quad fuera de carretera por la sierra y las dunas, con el Atlántico de fondo. Guincho está en la misma carretera de la costa entre Cascais y Cabo da Roca, así que no es desvío.", sitio:"Cascais · guinchotours.com",
+     alerta:"Van las tres. Al reservar hay que confirmar: quad biplaza o buggy para Mila de pasajera (preferible a que maneje dos horas), si exigen licencia de conducir, y si existe el recorrido corto de una hora como alternativa. Llevar ropa que se pueda ensuciar, una muda en el carro y el pelo recogido.",
+     historia:"La <b>Praia do Guincho</b> está dentro del Parque Natural Sintra-Cascais y es famosa por el viento: aquí se han corrido campeonatos del mundo de windsurf y de surf, y por eso el mar es bravo y no se nada. El paisaje de dunas con la sierra de Sintra detrás salió en el cine: la escena inicial de <i>Al servicio secreto de Su Majestad</i>, la película de James Bond de 1969, se rodó en esta playa."},
+    {h:"17:30", t:"Cabo da Roca", d:"El punto más occidental del continente europeo: acantilado de 140 metros, faro y Atlántico abierto. Se ve desde el mirador, sin caminar. A esta hora la luz es la mejor del día.",
+     img:"Cabo da Roca - Cape Roca.JPG",
+     pie:"Cabo da Roca: donde termina Europa",
+     historia:"Durante siglos se creyó literalmente que aquí terminaba el mundo conocido. En el monumento está grabado el verso de <b>Camões</b>: donde la tierra acaba y el mar comienza. El faro funciona desde 1772 y fue de los primeros de Portugal. Hay una oficina que expide un certificado con tu nombre de haber estado en el punto más occidental de Europa continental: es un recuerdo bobo y encantador."},
+    {h:"19:00", t:"Regreso a Lisboa", d:"Una hora aproximadamente. Día largo: la cena es ligera y cerca."},
+    {h:"20:30", tipo:"Cena", comida:true, t:"Ligera, en la Avenida", d:"Sin reserva y sin producción. Vienen de doce horas fuera y mañana es día de compras.", sitio:"Avenida da Liberdade, cerca del hotel"}
+  ]
+},
+{
+  id:"d16", nav:"16", dow:"Viernes",
+  titulo:"Avenida, compras y Alfama",
+  bajada:"El día regalado: se sale del hotel y ya están en la calle de las tiendas.",
+  marca:"Sin traslados largos · Alfama en tuk-tuk",
+  items:[
+    {h:"10:00", t:"Avenida da Liberdade", d:"El bulevar del lujo de Lisboa: Louis Vuitton, Prada, Gucci, Dior, más las marcas portuguesas. El hotel está sobre la Avenida, así que no hay traslado."},
+    {h:"13:30", tipo:"Almuerzo", comida:true, t:"JNcQUOI Avenida", d:"El que está integrado con la tienda de moda, el Delibar y el gourmet. Almuerzo y compras en el mismo sitio.", sitio:"Avenida da Liberdade 182-184", alerta:"Reservar.",
+     historia:"Ocupa el antiguo <b>Teatro Condes</b>, una sala art déco de los años treinta que después fue cine y estuvo abandonada. La reconvirtieron conservando la estructura del teatro: el comedor está bajo el esqueleto de un dinosaurio de 24 metros colgado del techo."},
+    {h:"15:30", t:"Chiado y Príncipe Real", d:"Segunda ronda de compras, en taxi. Chiado para marcas y librerías —ahí está la Bertrand, la librería en funcionamiento más antigua del mundo, de 1732—. Príncipe Real para decoración, anticuarios y diseño portugués."},
+    {h:"17:30", t:"Alfama y los miradores · en tuk-tuk contratado", d:"Portas do Sol, Senhora do Monte y la Sé, al atardecer.",
+     img:"Lisboa, Miradouro das Portas do Sol, vista.jpg",
+     pie:"Alfama desde el Miradouro das Portas do Sol",
+     alerta:"Alfama es empinadísima. Tuk-tuk por horas: sube, se bajan a la foto, se vuelven a montar. No a pie.",
+     historia:"Es el barrio <b>más antiguo de Lisboa</b> y su nombre viene del árabe al-hamma, las fuentes o los baños: aquí estuvo el corazón de la ciudad musulmana antes de la reconquista de 1147. Sobrevivió casi intacto al terremoto de 1755 porque está asentado sobre roca firme, y por eso conserva el trazado de callejones sin lógica, que era la trama medieval. De sus tabernas salió el <b>fado</b> en el siglo XIX, la música de la saudade, hoy patrimonio inmaterial de la humanidad."},
+    {h:"20:30", tipo:"Cena", comida:true, t:"Fifty Seconds", d:"En lo alto de la Torre Vasco da Gama, 120 metros sobre el río. El ascensor panorámico tarda cincuenta segundos y de ahí el nombre. Cocina de autor del chef Rui Silvestre.", sitio:"Torre Vasco da Gama, Parque das Nações",
+     alerta:"Ya no es de Martín Berasategui. Está a 20–25 minutos en taxi del centro y pide depósito por persona al reservar [verificar monto].",
+     historia:"Todo el <b>Parque das Nações</b> era una zona industrial degradada con refinerías y un matadero hasta que Lisboa organizó la <b>Expo 98</b>. Se arrasó y se levantó un barrio nuevo frente al río con el Oceanário, la estación de Calatrava y esta torre, que es el edificio más alto de Portugal."}
+  ]
+},
+{
+  id:"d17", nav:"17", dow:"Sábado",
+  titulo:"Fátima, Nazaré y Óbidos",
+  bajada:"Día completo con chofer. Santuario por la mañana, mar al mediodía, villa medieval al final.",
+  marca:"Último día completo · maletas listas esta noche",
+  marcaDuro:true,
+  items:[
+    {h:"07:30", t:"Salida con chofer", d:"130 kilómetros, hora y media hasta Fátima."},
+    {h:"09:00", t:"Santuario de Fátima", d:"Capelinha das Aparições, Basílica de Nossa Senhora do Rosário y la explanada, que es enorme y completamente plana.",
+     img:"Fátima September 2021-2.jpg",
+     pie:"Explanada y Basílica de Nossa Senhora do Rosário",
+     alerta:"Verificar el horario de misa del sábado con anticipación y organizar la mañana alrededor de esa hora.",
+     historia:"El <b>13 de mayo de 1917</b>, tres pastorcitos —Lúcia, de diez años, y sus primos Francisco y Jacinta— dijeron haber visto a la Virgen sobre una encina en este campo. Las apariciones se repitieron el 13 de cada mes hasta el <b>13 de octubre de 1917</b>, cuando unas 70.000 personas, creyentes y escépticos, presenciaron lo que se conoce como el milagro del sol. La Capelinha está en el punto exacto de la encina. La Basílica del Rosario se levantó entre 1928 y 1953 y guarda las tumbas de los tres videntes; Francisco y Jacinta murieron niños en la gripe de 1918 y fueron canonizados en 2017."},
+    {h:"10:15", t:"Basílica da Santíssima Trindade", d:"La iglesia moderna, al otro extremo de la explanada.",
+     img:"Basílica da Santíssima Trindade - Santuário de Fátima - 01.jpg",
+     pie:"Basílica da Santíssima Trindade, circular y sin columnas",
+     historia:"Se inauguró el <b>12 de octubre de 2007</b>, diseñada por el arquitecto griego <b>Alexandros Tombazis</b>. Es circular, de 40.000 m², con <b>8.633 asientos</b> y ninguna columna interior que corte la vista: una sola losa de hormigón de casi cien metros de luz. Se construyó porque la basílica antigua ya no alcanzaba para los peregrinos."},
+    {h:"11:30", t:"Camino a Nazaré", d:"45 minutos hacia la costa."},
+    {h:"12:30", tipo:"Almuerzo", comida:true, t:"Nazaré · pescado frente a la playa", d:"Antes de comer, el Miradouro do Suberco, en el Sítio, con la playa entera a los pies.",
+     img:"Nazaré Portugal (13386296483).jpg",
+     pie:"La playa de Nazaré vista desde el Sítio",
+     alerta:"Sin reserva. Segunda playa del viaje. Revisar el pronóstico de olas la semana previa.",
+     historia:"El pueblo tiene tres partes: la Praia abajo, y arriba del acantilado el Sítio y Pederneira. La leyenda dice que en <b>1182</b> el caballero Dom Fuas Roupinho perseguía un ciervo entre la niebla y su caballo se frenó al borde del precipicio cuando invocó a la Virgen; la ermita que marca el sitio sigue ahí. Lo de las <b>olas gigantes</b> no es folclore: frente a la costa hay un cañón submarino de más de 200 kilómetros de largo y hasta cinco mil metros de profundidad que concentra la energía del oleaje del Atlántico y lo dispara contra la Praia do Norte. Desde 2011 ahí se rompen los récords mundiales de surf de ola grande."},
+    {h:"16:00", t:"Óbidos", d:"Villa medieval amurallada: casas blancas con marcos amarillos y azules, flores, y la ginjinha en copita de chocolate que se come al final.",
+     img:"Muralla de Óbidos. Portugal (53375275998).jpg",
+     pie:"Las murallas de Óbidos, intactas desde el siglo XIV",
+     alerta:"La calle principal es piedra irregular en subida suave. El chofer deja a Mila en la puerta de la muralla y se recorre despacio.",
+     historia:"Afonso Henriques se la quitó a los moros en 1148. En <b>1282</b>, el rey <b>Dinis</b> trajo aquí a su esposa Isabel de Aragón recién casada; a ella le gustó tanto que él se la regaló, y desde entonces y durante más de cinco siglos Óbidos perteneció siempre a las reinas de Portugal. Por eso la llaman la <b>Vila das Rainhas</b>, la villa de las reinas: cada reina la recibía como regalo de bodas. El castillo es hoy una pousada y la muralla se conserva completa."},
+    {h:"18:00", t:"Regreso a Lisboa", d:"Llegada al hotel cerca de las 19:15."},
+    {h:"20:30", tipo:"Cena", comida:true, t:"Bougain Avenida", d:"En la propia Avenida da Liberdade, a pasos del hotel. Es la elección correcta para el cierre: después de doce horas de carretera, nadie quiere otro traslado.", sitio:"Avenida da Liberdade", alerta:"Reservar."},
+    {h:"22:30", tipo:"Copa", comida:true, t:"SEEN Sky Bar", d:"En el Tivoli, sobre la Avenida. Terraza con la vista de Lisboa iluminada. Última noche.", sitio:"Tivoli Avenida Liberdade", alerta:"Reservar mesa: en fin de semana se llena."}
+  ]
+},
+{
+  id:"d18", nav:"18", dow:"Domingo",
+  titulo:"Salida a Roma",
+  bajada:"Sin paseo. El vuelo sale al mediodía.",
+  marca:"Solo traslado",
+  items:[
+    {h:"08:00", tipo:"Desayuno", comida:true, t:"Desayuno en el hotel", d:"Sin salir. Las maletas quedaron cerradas anoche."},
+    {h:"09:30", t:"Check-out", d:"Revisar cajones, cargadores y compras. Pedir factura si va a gasto de empresa."},
+    {h:"10:30", t:"Traslado privado al aeropuerto", d:"Vuelo internacional: tres horas de margen por las compras y el equipaje de las tres."},
+    {h:"12:55", t:"Vuelo Lisboa · Roma Fiumicino", d:"Llegada a FCO 16:45. Hora de despegue por confirmar en el localizador."}
+  ]
+}
+];
+
+const ITALIA = [
+{
+  id:"i18", nav:"18", dow:"Domingo",
+  titulo:"Llegada a Roma",
+  bajada:"Llegan a media tarde. Solo traslado, instalarse y cenar cerca.",
+  marca:"Medio día · sin programa",
+  items:[
+    {h:"16:45", t:"Llegada · Fiumicino", d:"Vuelo desde Lisboa. Traslado privado al hotel: entre 45 minutos y una hora según el tráfico del domingo."},
+    {h:"18:00", t:"Check-in · NH Collection Roma Giustiniano", d:"Via Virgilio 1, barrio Prati. Reserva 0203091557, tres noches, Jr. Suite Double View Terrace con desayuno.",
+     alerta:"Confirmar por escrito antes de viajar que la habitación tiene tres camas reales, no supletoria ni sofá."},
+    {h:"20:00", tipo:"Cena", comida:true, t:"En Prati, cerca del hotel", d:"Sin reserva. Prati es barrio de romanos, no de turistas: se come bien y a precio normal a pocas cuadras.",
+     historia:"El barrio se llama <b>Prati</b> porque hasta finales del siglo XIX eran literalmente prados: los <i>Prati di Castello</i>, huertas y viñedos fuera de la ciudad. Se urbanizó después de 1870, cuando Roma pasó a ser capital de Italia y hubo que alojar a los funcionarios del nuevo Estado. Por eso sus calles son rectas y anchas, al revés del centro histórico: es la única parte de Roma diseñada con regla."}
+  ]
+},
+{
+  id:"i19", nav:"19", dow:"Lunes",
+  titulo:"Tour en carrito de golf y Vaticano",
+  bajada:"Seis horas de tour por la mañana y la tarde aprovechada a pie desde el hotel.",
+  marca:"Tour 10:00 a 16:00 · resto sin esfuerzo",
+  items:[
+    {h:"10:00", t:"Tour en carrito de golf · 6 horas", d:"Recorrido por la Roma monumental sentadas, que es la forma inteligente de ver la ciudad con este grupo. Llevar agua, gorra y calzado cómodo para las bajadas del carrito."},
+    {h:"16:00", t:"Fin del tour · regreso al hotel", d:"Quince minutos de descanso antes de salir otra vez."},
+    {h:"16:30", t:"Basílica de San Pedro", d:"A diez minutos caminando del hotel. Entrada gratuita, abierta hasta las 18:30 en octubre. Por dentro es plana, sin escalones. A esta hora ya no hay cola de la mañana.",
+     img:"Basilica di San Pietro in Vaticano September 2015-1a.jpg",
+     pie:"La basílica de San Pedro desde la plaza",
+     alerta:"La cúpula son 551 escalones. No la suban. Hombros y rodillas cubiertos o no dejan entrar.",
+     historia:"Debajo del altar mayor está, según la tradición, la <b>tumba del apóstol Pedro</b>, crucificado en el circo de Nerón que ocupaba este mismo terreno. La primera basílica la mandó levantar Constantino en el año 324; la actual se empezó en <b>1506</b> y tardó 120 años, pasando por las manos de Bramante, Rafael, Miguel Ángel y Bernini. Miguel Ángel diseñó la cúpula a los 71 años y no la vio terminada. Es el templo cristiano más grande del mundo: 218 metros de largo. La columnata ovalada de Bernini, de 1667, tiene 284 columnas y fue pensada como <i>dos brazos que abrazan</i> a los fieles."},
+    {h:"18:15", t:"Via Cola di Rienzo", d:"La calle comercial de Prati: plana, ancha y a dos cuadras del hotel. Tiendas italianas de verdad, no de turista. Ahí está Castroni, la tienda histórica de café y despensa donde se compran los regalos que sí valen la pena."},
+    {h:"20:00", tipo:"Cena", comida:true, t:"En Prati", d:"Otra vez a pie desde el hotel. Mañana el tour arranca a las 10:00, así que no hay que madrugar."}
+  ]
+},
+{
+  id:"i20", nav:"20", dow:"Martes",
+  titulo:"Cumpleaños de Angie",
+  bajada:"Catacumbas y Vía Appia por la mañana. La tarde en blanco a propósito: el plato fuerte es la noche.",
+  marca:"Cumpleaños · rooftop ya reservado",
+  marcaDuro:true,
+  items:[
+    {h:"10:00", t:"Tour de catacumbas y Vía Appia Antica", d:"Hasta las 14:00.",
+     img:"Via Appia Antica, Rome, Italy (20096182628).jpg",
+     pie:"El empedrado original de la Vía Appia",
+     historia:"La <b>Vía Appia</b> se abrió en el año <b>312 antes de Cristo</b> y la llamaban <i>regina viarum</i>, la reina de las calzadas: unía Roma con Brindisi, 540 kilómetros hacia el sur. Las piedras que van a pisar son las mismas. Como la ley romana prohibía enterrar dentro de la ciudad, los costados se llenaron de tumbas, y después los cristianos excavaron debajo las <b>catacumbas</b>: kilómetros de galerías en varios niveles. No eran escondites para celebrar misa, como cuenta la leyenda, sino cementerios; en la de San Calixto están enterrados dieciséis papas."},
+    {h:"14:30", tipo:"Almuerzo", comida:true, t:"Al regresar, cerca del hotel", d:"Sin reserva y sin producción. La cena de la noche es larga."},
+    {h:"15:30", t:"Hotel · descanso y arreglarse", d:"Dos horas. La habitación es Junior Suite con terraza: úsenla. Vienen de dos días seguidos de excursión."},
+    {h:"19:00", t:"Taxi a Via Lombardia", d:"Del hotel a Via Veneto son unos 15 minutos cruzando el Tíber por el puente Cavour. Pedirlo en recepción con antelación."},
+    {h:"19:30", tipo:"Cena de cumpleaños", comida:true, t:"Settimo · Panoramic Flavours of Rome", d:"Via Lombardia 47, 00187 Roma. Azotea del Sofitel Villa Borghese, en el séptimo piso, de donde viene el nombre. Terraza con Villa Borghese a los pies y la cúpula de San Pedro al fondo. Reserva confirmada a nombre de Milagros.", sitio:"Martes 20 de octubre · 19:30 · 3 personas",
+     alerta:"Es terraza abierta y a esa hora hay 13 o 14 grados: vestido elegante pero con abrigo o estola. Llamar unos días antes para avisar que es cumpleaños y para pedir mesa en el borde, no adentro.",
+     historia:"Están cenando encima de <b>Via Veneto</b>, que en los años cincuenta y sesenta fue el centro del mundo: la calle de los cafés donde se sentaban actores y actrices de Hollywood mientras los fotógrafos los cazaban. De ahí salió la palabra <b>paparazzi</b>, del personaje Paparazzo de <i>La Dolce Vita</i> de Fellini, película rodada en esta misma calle en 1960. Abajo se extiende <b>Villa Borghese</b>, el gran parque de Roma: era la finca privada de recreo del cardenal Scipione Borghese en el siglo XVII y hoy alberga su colección de esculturas de Bernini."},
+    {h:"22:15", t:"Roma nocturna en taxi", d:"De Via Lombardia, la Fontana di Trevi queda a diez minutos. El taxi de regreso al hotel pasa por Trevi, Piazza Navona y el Coliseo iluminado, con una sola bajada en Trevi. Es la mejor hora y no exige caminar.",
+     img:"Fontana di Trevi di notte.JPG",
+     pie:"La Fontana di Trevi de noche",
+     historia:"La fuente se terminó en <b>1762</b> y marca el final del <i>Aqua Virgo</i>, un acueducto que trae agua desde hace más de dos mil años, desde el año 19 antes de Cristo, y que todavía funciona. La tradición de la moneda pide lanzarla <b>de espaldas y con la mano derecha por encima del hombro izquierdo</b> para asegurar el regreso a Roma. Se recogen unos tres mil euros al día, que van a Cáritas."}
+  ]
+},
+{
+  id:"i21", nav:"21", dow:"Miércoles",
+  titulo:"Roma → Pordenone",
+  bajada:"Día de traslado con cambio en Venecia Mestre. La tarde se rescata para la feria.",
+  marca:"Madrugar · maletas grandes se quedan en Roma",
+  marcaDuro:true,
+  items:[
+    {h:"06:15", t:"Taxi del hotel a Roma Termini", d:"Pedirlo la noche anterior en recepción.",
+     alerta:"Las maletas grandes se quedan guardadas en el NH Giustiniano hasta el regreso del 23. A Pordenone van solo con equipaje de cabina."},
+    {h:"07:50", t:"Frecciarossa · Roma Termini → Venezia Mestre", d:"Unas 3 horas 40 minutos. Asientos reservados, tarifa Super Economy."},
+    {h:"~11:30", t:"Cambio en Venezia Mestre", d:"Cambio de andén. Los regionales a Pordenone salen cada hora, así que un retraso del Frecciarossa no arruina el día."},
+    {h:"~12:40", t:"Llegada a Pordenone", d:"Unos 50 minutos de regional desde Mestre."},
+    {h:"13:00", t:"SICAM · Pordenone Fiere", d:"Viale Treviso 1. Van directo con el equipaje de mano al guardarropa del recinto y no pierden la tarde esperando el apartamento.",
+     alerta:"Escribirle antes a Cristina para dejar el equipaje antes de las 16:00. Si no se puede, guardarropa de la feria."},
+    {h:"16:00", t:"Check-in apartamento · Via Edoardo Bassini 1", d:"Airbnb de Cristina, cerca de la feria y del centro. Check-out el viernes a las 11:00."},
+    {h:"20:00", tipo:"Cena", comida:true, t:"Centro de Pordenone", d:"El Corso Vittorio Emanuele II es la calle porticada del casco antiguo, a pocos minutos.",
+     img:"Corso Vittorio Emanuele II Pordenone.JPG",
+     pie:"Corso Vittorio Emanuele II, el eje del casco antiguo",
+     historia:"El nombre viene del latín <b>Portus Naonis</b>, puerto sobre el río Noncello: en la Edad Media era un puerto fluvial que conectaba con Venecia, y de hecho perteneció a los Habsburgo austríacos hasta que Italia se unificó en 1866. Cuando llegó el ferrocarril en 1855, el puerto murió y la ciudad se reconvirtió en industria algodonera. En pleno Corso está el <b>Palazzo Ricchieri</b>, torre fortificada del siglo XIII hoy museo, con una sala pintada al fresco con la historia de Tristán e Isolda. Esa tradición de fabricar cosas es la razón de que la feria de componentes del mueble se haga aquí y no en Milán."}
+  ]
+},
+{
+  id:"i22", nav:"22", dow:"Jueves",
+  titulo:"SICAM · día completo",
+  bajada:"El único día entero de feria. Es el día que justifica el viaje.",
+  marca:"Feria 9:30 a 18:00",
+  items:[
+    {h:"09:30", t:"SICAM · apertura", d:"Las tres con credencial propia, ya registradas en exposicam.it. Llevar tarjetas de TCC y un cuaderno: en esta feria se cierran contactos, no se pasea."},
+    {h:"09:30", t:"Cómo recorrerla", d:"Son 20.000 m² netos, 700 expositores y el 32% internacionales. Recorrer por pabellón, no por interés, y marcar en el plano los stands objetivo antes de entrar. Herrajes, correderas, frentes, superficies y tiradores están agrupados por sector.",
+     alerta:"En el pabellón 6 están las Case del Made in Italy, el espacio de encuentro entre empresas e instituciones. Ahí es donde se habla de representaciones y distribución."},
+    {h:"13:00", tipo:"Almuerzo", comida:true, t:"Dentro del recinto", d:"No salir a almorzar: se pierde una hora y media de feria en traslados."},
+    {h:"18:00", t:"Cierre y regreso al apartamento", d:"Vaciar la bolsa de catálogos esa misma noche y anotar sobre cada uno qué se habló y con quién. Al tercer día ya no se acuerda nadie."},
+    {h:"20:00", tipo:"Cena", comida:true, t:"Pordenone", d:"Friuli es zona de vino blanco: pinot grigio, friulano y ribolla gialla salen de aquí mismo."}
+  ]
+},
+{
+  id:"i23", nav:"23", dow:"Viernes",
+  titulo:"Media feria y regreso a Roma",
+  bajada:"Check-out a las 11:00 y tren de vuelta por la tarde.",
+  marca:"Comprar el tren en tarifa Economy, que sí permite cambio",
+  marcaDuro:true,
+  items:[
+    {h:"09:00", t:"Check-out del apartamento", d:"Salida antes de las 11:00. Las maletas van al guardarropa de Pordenone Fiere."},
+    {h:"09:30", t:"SICAM · última mañana", d:"Cerrar los pendientes del día anterior: los stands que quedaron por ver y las conversaciones a medias. Pedir catálogo digital por correo en lugar de cargar papel hasta China."},
+    {h:"~14:30", t:"Regional · Pordenone → Venezia Mestre", d:"Cincuenta minutos."},
+    {h:"~15:30", t:"Frecciarossa · Venezia Mestre → Roma Termini", d:"Llegada entre las 19:15 y las 19:45.",
+     alerta:"Comprar este tramo en tarifa Economy: permite cambiar de tren si la feria se alarga."},
+    {h:"20:15", t:"Check-in · NH Collection Roma Giustiniano", d:"Reserva 0203091558, una noche. Recuperan las maletas grandes que quedaron guardadas."},
+    {h:"21:00", tipo:"Cena", comida:true, t:"Ligera, en Prati", d:"Cerca del hotel. Maletas cerradas esta misma noche: mañana se sale a las 7:00."}
+  ]
+},
+{
+  id:"i24", nav:"24", dow:"Sábado",
+  titulo:"Roma → Estambul → Cantón",
+  bajada:"Sin programa. Empieza el tramo asiático.",
+  marca:"Salir del hotel a las 7:00 · sin excepción",
+  items:[
+    {h:"07:00", t:"Taxi a Fiumicino · las tres juntas", d:"Un solo taxi. Primera parada Terminal 1, donde se baja Angie; después Terminal 3. Los dos vuelos salen con 25 minutos de diferencia, así que el horario sirve para todas. Pedir el taxi la noche anterior.",
+     alerta:"Pedir un vehículo grande: van cuatro maletas facturadas más equipaje de mano, y las de Angie se separan del resto."},
+    {h:"10:30", t:"Angie · UX 1040 Roma → Madrid", d:"Air Europa, Terminal 1. Llega a Madrid 13:05 en Terminal 2. Conecta con UX 71 a las 16:20 desde Terminal 1 y llega a Caracas 19:35. Código JDEULS.",
+     alerta:"En Barajas cambia de terminal, de la 2 a la 1. Tiene tres horas y cuarto de conexión, tiempo de sobra, pero conviene que sepa desde ya que le toca caminar entre terminales."},
+    {h:"10:55", t:"TK 1862 · Roma Fiumicino → Estambul", d:"Terminal 3. Llegada a Estambul 14:45. Clase Business, 40 kg de equipaje. Código de reserva DKKOXH."},
+    {h:"14:45", t:"Escala en Estambul", d:"Diez horas y media de conexión nocturna. Con boleto Business hay acceso a sala VIP: aprovecharla para dormir y ducharse antes del vuelo largo."},
+    {h:"01:20", t:"TK 72 · Estambul → Cantón", d:"Sale de madrugada del día 25 y llega a Guangzhou a las 16:50."}
+  ]
+}
+];
+
+const CHINA = [
+{
+  id:"c25", nav:"25", dow:"Domingo",
+  titulo:"Llegada a Cantón",
+  bajada:"Llegan al final de la tarde después de un vuelo largo. Nada más que instalarse y dormir.",
+  marca:"Jet lag · 12 horas de diferencia con Venezuela",
+  items:[
+    {h:"16:50", t:"Llegada · Aeropuerto Baiyun (CAN)", d:"TK 72 desde Estambul. Inmigración y equipaje pueden tomar una hora larga. Traslado al hotel: unos 45 minutos hasta Zhujiang New Town."},
+    {h:"18:30", t:"Check-in · Four Seasons Hotel Guangzhou", d:"5 Zhujiang West Road, Zhujiang New Town, Tianhe. Pisos 70 y superiores de la torre IFC, con vista al río Perla. Tel. +86 20 8883 3888. Reserva del 25 de octubre al 1 de noviembre.",
+     img:"Canton Tower, Guangzhou, CN Lit up at night.jpg",
+     pie:"La Canton Tower desde Zhujiang New Town",
+     alerta:"Yulmar llega por su cuenta desde Caracas vía Doha y se hospeda en el Leeden Hotel, a diez minutos a pie. Punto de encuentro acordado: lobby del Four Seasons.",
+     historia:"Cantón, <b>Guangzhou</b>, tiene más de 2.200 años y fue durante siglos el punto final de la <b>Ruta de la Seda marítima</b>: el único puerto por donde China comerciaba con el resto del mundo. Durante la dinastía Qing fue literalmente el único puerto abierto a los extranjeros. Zhujiang New Town, donde está el hotel, era campo hasta los años noventa; hoy concentra los rascacielos de la ciudad y la Canton Tower, de 600 metros."},
+    {h:"20:00", tipo:"Cena", comida:true, t:"En el hotel", d:"Sin salir. Mañana la feria abre a las 9:30 y el cuerpo va a estar doce horas desfasado.",
+     alerta:"Dejar listo desde esta noche: tarjetas de presentación, el plano de Pazhou y las credenciales de la feria."}
+  ]
+},
+{
+  id:"c26", nav:"26", dow:"Lunes",
+  titulo:"Canton Fair · día completo",
+  bajada:"Fase 2 en el complejo de Pazhou. El día grande de la feria.",
+  marca:"140ª edición · Fase 2 · 9:30 a 17:30",
+  marcaDuro:true,
+  items:[
+    {h:"09:30", t:"Canton Fair · Complejo de Pazhou", d:"No. 382 Yuejiang Zhong Road, distrito de Haizhu. Consultar el shuttle del hotel; el Leeden ofrece bus gratuito al recinto.",
+     alerta:"El documento de ruta dice 139ª edición: es un error. La de otoño de 2026 es la 140ª. La 139ª fue la de primavera, en abril.",
+     historia:"La <b>Feria de Cantón</b> existe desde <b>1957</b> y es la feria comercial más antigua y más grande de China. Se hace dos veces al año y se divide en tres fases de cinco días, cada una con sectores distintos. Ustedes caen en la <b>Fase 2, del 23 al 27 de octubre</b>, que es la de muebles, productos del hogar, decoración y materiales de construcción: exactamente el sector de TCC."},
+    {h:"09:30", t:"Cómo recorrerla", d:"El recinto es enorme y no se camina completo. Marcar en el plano los pabellones objetivo antes de entrar y recorrer por pabellón, no saltando por interés. Llevar zapatos cómodos y agua.",
+     alerta:"Se pierden la Fase 1, del 15 al 19, que es la de herrajes y maquinaria. Eso se compensa con las visitas directas a Kingstar, Tunosen, DTC y AOSITE, que valen más que un stand."},
+    {h:"13:00", tipo:"Almuerzo", comida:true, t:"Dentro del recinto", d:"No salir: se pierde hora y media en traslados."},
+    {h:"17:30", t:"Cierre", d:"De vuelta al hotel. Esa misma noche, ordenar tarjetas y catálogos anotando sobre cada uno qué se habló y con quién. Al tercer día ya no se acuerda nadie."}
+  ]
+},
+{
+  id:"c27", nav:"27", dow:"Martes",
+  titulo:"Feria medio día y GARIS",
+  bajada:"Última mañana de feria y primera visita a fábrica, en Dongguan.",
+  marca:"Último día de la Fase 2 · visita por confirmar",
+  items:[
+    {h:"09:30", t:"Canton Fair · medio día", d:"El 27 es el último día de la Fase 2. Los expositores empiezan a desmontar temprano, así que lo que quede pendiente hay que cerrarlo en la mañana."},
+    {h:"13:00", t:"Traslado a Changping, Dongguan", d:"Entre una hora y media y dos desde Pazhou, según el tráfico."},
+    {h:"15:00", tipo:"Visita técnica", comida:true, t:"GARIS · contacto David", d:"Changping, Dongguan. Hasta las 19:00 aproximadamente.",
+     alerta:"PENDIENTE: la visita está sin hora fija y hay que decidir si se hace el 27 o el 31. Confirmar por WeChat antes de viajar."}
+  ]
+},
+{
+  id:"c28", nav:"28", dow:"Miércoles",
+  titulo:"Kingstar y Tunosen · Shunde",
+  bajada:"Dos visitas de herrajes en Leliu, ambas confirmadas con hora.",
+  marca:"Las dos confirmadas · 9:00 a 19:00",
+  items:[
+    {h:"09:00", t:"Salida a Leliu, Shunde (Foshan)", d:"Hora y media desde Zhujiang New Town."},
+    {h:"10:30", tipo:"Visita técnica", comida:true, t:"Kingstar Hardware", d:"Leliu, Shunde. Confirmada con hora fija.",
+     historia:"<b>Shunde</b>, dentro de Foshan, es el centro mundial del mueble y los herrajes: en Lecong, a pocos kilómetros, está el mayor mercado mayorista de muebles del planeta, con kilómetros de showrooms continuos. De este mismo distrito salió Midea, y aquí se concentran las fábricas de correderas, bisagras y sistemas de puertas que abastecen a medio mundo."},
+    {h:"13:00", tipo:"Almuerzo", comida:true, t:"En Leliu", d:"Normalmente lo organiza la propia fábrica. Es parte de la negociación: no se rechaza."},
+    {h:"15:00", tipo:"Visita técnica", comida:true, t:"Tunosen Hardware · contacto Katy", d:"Leliu, Shunde. Confirmada con hora fija."},
+    {h:"19:00", t:"Regreso a Cantón", d:"Hora y media de vuelta."}
+  ]
+},
+{
+  id:"c29", nav:"29", dow:"Jueves",
+  titulo:"DTC y SH Mobiliario",
+  bajada:"Segundo día en Shunde. Herrajes por la mañana, mobiliario por la tarde.",
+  marca:"DTC sin confirmar · SH a las 14:00 en firme",
+  items:[
+    {h:"09:00", t:"Salida a Chonghe, Leliu", d:"Misma zona que ayer."},
+    {h:"10:00", tipo:"Visita técnica", comida:true, t:"DTC · contacto David", d:"Chonghe, Leliu, Shunde.",
+     alerta:"PENDIENTE: visita sin confirmar. Es una de las fábricas de bisagras y correderas más grandes de China; vale la pena insistir por WeChat hasta tener hora fija."},
+    {h:"14:00", tipo:"Visita técnica", comida:true, t:"SH Mobiliario · contacto David", d:"Beijiao, Shunde (Foshan). Confirmada con hora fija."},
+    {h:"19:00", t:"Regreso a Cantón", d:"Día largo pero sin traslados extremos: todo dentro de Foshan."}
+  ]
+},
+{
+  id:"c30", nav:"30", dow:"Viernes",
+  titulo:"Nuomi y AOSITE · ruta oeste",
+  bajada:"El día más exigente del viaje: Nanhai por la mañana y Zhaoqing por la tarde.",
+  marca:"Tres traslados largos · riesgo de atraso",
+  marcaDuro:true,
+  items:[
+    {h:"08:00", t:"Salida temprano a Danzao, Nanhai", d:"Salir antes que los otros días: la tarde no admite retrasos."},
+    {h:"10:00", tipo:"Visita técnica", comida:true, t:"Nuomi", d:"Danzao, Nanhai (Foshan). Confirmada con hora fija."},
+    {h:"12:00", t:"Traslado a Zhaoqing", d:"Más de 100 kilómetros desde Foshan, entre hora y media y dos horas. Almorzar en el camino, no antes de salir.",
+     alerta:"Este es el punto frágil del itinerario. Si Nuomi se alarga, AOSITE se cae. Avisar a AOSITE ese mismo día por WeChat si se va con retraso."},
+    {h:"14:30", tipo:"Visita técnica", comida:true, t:"AOSITE · contacto David", d:"Jinli, distrito de Gaoyao, Zhaoqing. Confirmada con hora fija."},
+    {h:"18:00", t:"Regreso a Cantón", d:"Dos horas o más. Llegada cerca de las 20:30. Cena ligera en el hotel."}
+  ]
+},
+{
+  id:"c31", nav:"31", dow:"Sábado",
+  titulo:"Fábrica de carros · Nansha",
+  bajada:"Último día en Cantón. Visita de día completo en el puerto.",
+  marca:"Hora por confirmar · hacer maletas esta noche",
+  items:[
+    {h:"09:00", tipo:"Visita técnica", comida:true, t:"Fábrica de carros · Nansha", d:"Nansha, zona portuaria de Guangzhou. Hasta las 17:00.",
+     alerta:"PENDIENTE: hora por confirmar. Nansha está a una hora y media del centro, así que la hora de salida depende de eso."},
+    {h:"18:30", t:"Regreso y preparación", d:"Maletas cerradas esta noche: mañana el vuelo a Shanghái es temprano y hay check-out."},
+    {h:"20:00", tipo:"Cena", comida:true, t:"Última noche en Cantón", d:"El hotel tiene restaurantes con estrella. Vale la pena usarlos esta noche."}
+  ]
+},
+{
+  id:"c01", nav:"1 nov", dow:"Domingo",
+  titulo:"Cantón → Shanghái",
+  bajada:"Vuelo de la mañana y tarde libre para instalarse.",
+  marca:"Volar a Hongqiao, no a Pudong",
+  marcaDuro:true,
+  items:[
+    {h:"06:30", t:"Check-out del Four Seasons", d:"Traslado al aeropuerto de Baiyun. Los vuelos domésticos piden estar dos horas antes."},
+    {h:"09:00", t:"Vuelo Cantón → Shanghái", d:"Dos horas y media. China Southern tiene su base en Cantón y es la opción natural.",
+     alerta:"Con el hotel en Pudong, los dos aeropuertos sirven igual: Hongqiao tiene más frecuencias en la mañana, y desde Pudong está el maglev hasta Longyang Road, a diez minutos del hotel. Elegir por horario y precio. Ojo con el equipaje: los vuelos domésticos chinos dan 20 kg en económica y ustedes vendrán cargadas de muestras. Comparar contra enviarlas por courier."},
+    {h:"12:00", t:"Llegada y traslado · Park Hyatt Shanghai", d:"Shanghai World Financial Center, 100 Century Avenue, Pudong. Tel. +86 21 3855 1508. Confirmación 6259.698.538, PIN 9608. Cinco noches, del 1 al 6 de noviembre, con desayuno incluido.",
+     alerta:"El check-in es a las 15:00 y ustedes llegan antes. Avisar al hotel la hora prevista de llegada con antelación (lo pide expresamente) y pedir entrada temprana. Presentar pasaporte y tarjeta de crédito al registrarse.",
+     historia:"El hotel ocupa los pisos <b>79 al 93 del Shanghai World Financial Center</b>, el rascacielos que los shanghaineses llaman el abrelatas por el hueco trapezoidal del remate. Tiene 492 metros y fue el edificio más alto de China cuando se terminó en 2008. Está en <b>Lujiazui</b>, el distrito financiero que hace treinta y cinco años era campo de cultivo."},
+    {h:"15:00", t:"Tarde libre", d:"Aclimatación. No programar nada: vienen de siete días seguidos de fábricas."}
+  ]
+},
+{
+  id:"c02", nav:"2 nov", dow:"Lunes",
+  titulo:"The Bund · día libre",
+  bajada:"El único día de ciudad sin agenda de trabajo.",
+  marca:"Sin visitas · ritmo suave",
+  items:[
+    {h:"10:00", t:"Mañana libre", d:"Descanso o compras, según cómo amanezcan."},
+    {h:"16:00", t:"The Bund", d:"El malecón histórico sobre el río Huangpu. Se camina plano y de corrido, con los rascacielos de Pudong enfrente.",
+     img:"Shanghai Skyline from the Bund.jpg",
+     pie:"Pudong visto desde el Bund",
+     alerta:"Ir por la tarde y quedarse al anochecer: las luces se encienden y ese es el momento. Con Mila, taxi hasta el malecón y caminar solo el tramo central.",
+     historia:"El <b>Bund</b> era la concesión internacional: los edificios de piedra que se ven de este lado son los bancos y casas comerciales que en los años veinte y treinta hicieron de Shanghái la ciudad más rica de Asia, lo que llamaban el Wall Street de Oriente. Lo asombroso es lo de enfrente: <b>Lujiazui</b>, con la torre Perla Oriental y los rascacielos, era campo de cultivo y galpones hasta 1990. Todo eso se levantó en poco más de treinta años."},
+    {h:"19:30", tipo:"Cena", comida:true, t:"Con vista al río", d:"Los edificios del Bund tienen restaurantes y terrazas en los últimos pisos."}
+  ]
+},
+{
+  id:"c03", nav:"3 nov", dow:"Martes",
+  titulo:"Melamínicos · Xuhui",
+  bajada:"Única visita técnica en Shanghái.",
+  marca:"Hora por confirmar",
+  items:[
+    {h:"10:00", tipo:"Visita técnica", comida:true, t:"Melamínicos · Minrun Building", d:"Distrito de Xuhui, Shanghái. Hasta las 15:00.",
+     alerta:"PENDIENTE: hora por confirmar. Xuhui está dentro de la ciudad, así que el traslado es corto."},
+    {h:"15:30", t:"Tarde libre", d:"Xuhui tiene la antigua concesión francesa: calles arboladas, casas bajas y tiendas de diseño. Es la zona más caminable de Shanghái y la más agradable para una tarde suelta."}
+  ]
+},
+{
+  id:"c04", nav:"4 nov", dow:"Miércoles",
+  titulo:"Shanghai Disney",
+  bajada:"Día completo en Pudong. Miércoles, que es de los días de menos gente.",
+  marca:"Alquilar silla de ruedas con anticipación",
+  marcaDuro:true,
+  items:[
+    {h:"08:30", t:"Traslado al parque", d:"Shanghai Disney Resort está en Pudong, al sureste. Cerca de una hora desde el centro. La línea 11 del metro llega directo."},
+    {h:"09:30", t:"Shanghai Disneyland · día completo", d:"Entradas compradas con anticipación por la app oficial. Se entra con pasaporte.",
+     alerta:"Un día normal en Disney son más de diez kilómetros de caminata. Con Mila hay que alquilar silla de ruedas o scooter, y reservarlo con anticipación porque se agotan. Si no, ese día la deja fuera de combate para el resto del viaje.",
+     historia:"Abrió en <b>junio de 2016</b> y fue el primer parque Disney de China continental. Su castillo, el <i>Enchanted Storybook Castle</i>, es el más grande que Disney ha construido, y a diferencia de los demás no está dedicado a una sola princesa sino a todas."},
+    {h:"19:00", t:"Regreso al hotel", d:"El desfile nocturno y los fuegos cierran el día, pero la salida es multitudinaria. Si van cansadas, mejor irse antes del final."}
+  ]
+},
+{
+  id:"c05", nav:"5 nov", dow:"Jueves",
+  titulo:"Día libre · preparación",
+  bajada:"Descanso antes del vuelo largo y cierre de compras.",
+  marca:"Último día completo",
+  items:[
+    {h:"10:00", t:"Compras y pendientes", d:"Nanjing Road para marcas, Tianzifang y la concesión francesa para cosas con carácter, y los mercados de tela si queda interés profesional."},
+    {h:"15:00", t:"Maletas y envíos", d:"Pesar el equipaje. Lo que no entre, courier desde el hotel.",
+     alerta:"Confirmar con el hotel la salida tardía del día 6 o una habitación de uso diurno. El vuelo sale a las 22:55 y el check-out normal es a mediodía: son diez horas de diferencia."},
+    {h:"19:30", tipo:"Cena", comida:true, t:"Última cena del viaje", d:"Trece días de viaje y tres países. Vale la pena cerrarlo bien."}
+  ]
+},
+{
+  id:"c06", nav:"6 nov", dow:"Viernes",
+  titulo:"Regreso a Venezuela",
+  bajada:"Vuelo nocturno desde Pudong. El día queda libre hasta la tarde.",
+  marca:"Salida del hotel a las 18:30",
+  items:[
+    {h:"12:00", t:"Check-out · Park Hyatt", d:"Con salida tardía negociada o habitación de uso diurno. Si no se consigue, dejar maletas en conserjería.",
+     alerta:"Negociar la salida tardía al hacer el check-in el día 1, no el día 6. En hoteles de esta categoría suele darse si se pide con tiempo."},
+    {h:"18:30", t:"Traslado al aeropuerto de Pudong", d:"45 kilómetros desde el centro, entre una hora y hora y media según el tráfico de viernes. Terminal 2."},
+    {h:"22:55", t:"TK 27 · Shanghái → Estambul", d:"Llegada a Estambul a las 06:00 del día 7."},
+    {h:"15:30", t:"TK 223 · Estambul → Caracas", d:"El 7 de noviembre. Llegada a Caracas a las 21:25. Fin del viaje."}
+  ]
+}
+];
+
+const RES_LIS = [
+{
+  titulo:"Esta semana · se agotan",
+  nota:"Octubre es temporada alta y falta un mes. Este bloque no espera a que cerremos el resto.",
+  items:[
+    {q:"Belcanto · cena del 14, 19:30, 3 personas", c:"belcanto.pt o su sistema de reservas en línea. Tener la tarjeta de crédito a mano y contestar su llamada de confirmación."},
+    {q:"Fifty Seconds · cena del 16, 20:30, 3 personas", c:"A través del hotel Myriad by Sana. Piden depósito por persona."},
+    {q:"Palácio da Pena · entrada del 15 con franja horaria", c:"parquesdesintra.pt. Sumar el ticket del autobús interno del parque."},
+    {q:"Chofer privado con vehículo · días 15 y 17", c:"Jornadas de 10 y 12 horas, tres pasajeras con maletero libre. Confirmar que espera en cada parada."},
+    {q:"Traslados de aeropuerto · llegada 13 y salida 18", c:"Llegada con cartel de nombre. Vehículo con capacidad para el equipaje de las tres."},
+    {q:"NH Collection: confirmar tres camas reales", c:"Las NH Collection rara vez tienen triple. Si lo asignado es cama supletoria o sofá, pedir cambio a dos habitaciones comunicadas o suite ahora, no en octubre. Pedir también entrada temprana el 13."}
+  ]
+},
+{
+  titulo:"En los próximos diez días",
+  nota:"Todas admiten reserva por teléfono o en línea. Ninguna es crítica, pero sin reserva se pierde el horario que conviene.",
+  items:[
+    {q:"JNcQUOI Avenida · almuerzo del 16", c:"13:30, 3 personas."},
+    {q:"Bougain Avenida · cena del 17", c:"20:30, 3 personas."},
+    {q:"SEEN Sky Bar · copa del 17", c:"22:30. Mesa en terraza."},
+    {q:"SUD Lisboa Terrazza · almuerzo del 14", c:"13:30. Pedir terraza."},
+    {q:"Cantinho do Avillez · cena del 13", c:"20:00, 3 personas."},
+    {q:"Cervejaria Liberdade · almuerzo del 13", c:"14:00. Confirmar si toman reserva."},
+    {q:"Mosteiro dos Jerónimos · entrada del 14", c:"Compra anticipada para evitar la fila."},
+    {q:"Quads · Guincho Adventours, 15 oct a las 15:00, 3 personas", c:"guinchotours.com. Confirmar: biplaza o buggy para que Mila vaya de pasajera, si piden licencia, opción de recorrido de una hora, y punto exacto de encuentro."},
+    {q:"Tuk-tuk por horas en Alfama · tarde del 16", c:"Dos horas, recogida en el hotel o en la Sé."}
+  ]
+},
+{
+  titulo:"Verificar antes de viajar",
+  nota:"Datos que cambian y conviene confirmar en la semana previa.",
+  items:[
+    {q:"Horario de misa del sábado en el Santuario de Fátima", c:"Define la hora de salida del día 17."},
+    {q:"Hora exacta de despegue del vuelo a Roma el 18", c:"Está estimada en 12:55 a partir de la llegada a FCO."},
+    {q:"Pronóstico de olas en Nazaré", c:"Consultar surf-forecast la semana previa. Si marca más de tres metros, vale ir directo al faro."},
+    {q:"Grafía del nombre en todas las reservas", c:"KATEHRINE JANJI, exactamente así como aparece en el pasaporte."}
+  ]
+}
+];
+
+const RES_ITA = [
+{
+  titulo:"Esta semana",
+  nota:"Con la feria encima, el corredor Roma–Venecia se satura de expositores y compradores.",
+  items:[
+    {q:"Tren del 21 · Roma Termini → Venezia Mestre, 07:50", c:"trenitalia.com. Frecciarossa, 3 adultas, tarifa Super Economy, asientos juntos. Nombre exacto del pasaporte."},
+    {q:"Tren del 21 · Venezia Mestre → Pordenone", c:"Regional, comprado aparte. Dejar mínimo 25 minutos de conexión en Mestre."},
+    {q:"Tren del 23 · Pordenone → Roma Termini, con cambio en Mestre", c:"Salida sobre las 14:30. Tarifa Economy, que permite cambio de tren."},
+    {q:"Settimo (Sofitel Villa Borghese) · cena del 20, 19:30, 3 personas", c:"CONFIRMADA a nombre de Milagros. Via Lombardia 47. Falta llamar para avisar que es cumpleaños y pedir mesa en el borde de la terraza."},
+    {q:"NH Giustiniano: tres camas reales en las dos estancias", c:"+39 06 68281601, reservas 0203091557 y 0203091558. Exigirlo por escrito."},
+    {q:"NH Giustiniano: guardar maletas del 21 al 23", c:"Pedirlo al hacer check-out el 21, mencionando la reserva del 23."},
+    {q:"Mensaje a Cristina · dejar equipaje antes de las 16:00 el día 21", c:"Por el chat de Airbnb. Si no se puede, guardarropa de Pordenone Fiere."}
+  ]
+},
+{
+  titulo:"Traslados",
+  nota:"Los tres van con vehículo y espera, sin cargar maletas por estaciones.",
+  items:[
+    {q:"Traslado Fiumicino → NH Giustiniano, 18 oct", c:"Llegada 16:45, con cartel de nombre. Capacidad para el equipaje de las tres."},
+    {q:"Taxi hotel → Termini, 21 oct a las 06:15", c:"Pedirlo en recepción la noche del 20."},
+    {q:"Taxi hotel → Fiumicino, 24 oct a las 07:00", c:"Vehículo grande para las tres y todo el equipaje. Parada en Terminal 1 (Angie, Air Europa 10:30) y luego Terminal 3 (Turkish 10:55). Pedirlo en recepción la noche del 23."},
+    {q:"Taxis del 20: hotel → Via Lombardia 19:00 y regreso 22:15", c:"Ida directa a Settimo, unos 15 minutos. El regreso, con paso por Trevi, Navona y el Coliseo. Coordinar con el conserje."}
+  ]
+},
+{
+  titulo:"Ya resuelto",
+  nota:"Confirmado, no requiere acción.",
+  items:[
+    {q:"Credenciales de SICAM para las tres", c:"Registro completado en exposicam.it."},
+    {q:"NH Collection Roma Giustiniano · 18 al 21 y 23 al 24", c:"Reservas 0203091557 y 0203091558, con desayuno."},
+    {q:"Apartamento de Pordenone · 21 al 23", c:"Airbnb de Cristina, Via Edoardo Bassini 1."},
+    {q:"Vuelos Turkish · Roma, Estambul, Cantón", c:"Código DKKOXH. TK 1862 el 24 a las 10:55 y TK 72 el 25 a las 01:20."}
+  ]
+}
+];
+
+const RES_CHI = [
+{
+  titulo:"Urgente · esta semana",
+  nota:"El vuelo interno y el hotel de Shanghái son lo único del tramo asiático que sigue abierto.",
+  items:[
+    {q:"Vuelo Cantón → Shanghái Hongqiao, 1 nov en la mañana, 3 personas", c:"China Southern o equivalente. Salida entre 8:00 y 9:00. Revisar franquicia de equipaje: 20 kg en económica."},
+    {q:"Park Hyatt Shanghái: resolver las camas ANTES del 30 de octubre", c:"La reserva es de 1 habitación para 2 adultos con una sola cama King, y a Shanghái van tres. Hace falta una segunda habitación, o pasar a configuración de dos camas más habitación aparte para Yulmar. Después del 30 de octubre la cancelación deja de ser gratis."},
+    {q:"Avisar al Park Hyatt la hora prevista de llegada el 1 de noviembre", c:"El hotel lo pide expresamente. Aprovechar para solicitar entrada temprana: llegan antes de las 15:00."},
+    {q:"Pedir salida tardía para el 6 de noviembre", c:"Negociarlo al hacer el check-in el día 1. El vuelo sale 22:55 y el check-out es a mediodía."},
+    {q:"Salida tardía o habitación de uso diurno el 6 nov", c:"El vuelo sale 22:55 y el check-out es a mediodía. Pedirlo al reservar, no al llegar."},
+    {q:"Entradas de Shanghai Disney · 4 nov", c:"App oficial, con anticipación. Se entra con pasaporte."},
+    {q:"Silla de ruedas o scooter en Disney · 4 nov", c:"Reservar con anticipación: se agotan. Sin esto, el día es inviable para Mila."}
+  ]
+},
+{
+  titulo:"Visitas por confirmar",
+  nota:"Cuatro de las nueve fábricas siguen sin hora fija. Confirmar por WeChat antes de viajar.",
+  items:[
+    {q:"GARIS (David) · decidir si es el 27 o el 31 de octubre", c:"Changping, Dongguan. Sin hora fija."},
+    {q:"DTC (David) · visita del 29 sin confirmar", c:"Chonghe, Leliu, Shunde. Insistir: es de las fábricas grandes de bisagras y correderas."},
+    {q:"Fábrica de carros · hora del 31 de octubre", c:"Nansha, puerto de Guangzhou. A hora y media del centro."},
+    {q:"Melamínicos · hora del 3 de noviembre", c:"Minrun Building, distrito de Xuhui, Shanghái."}
+  ]
+},
+{
+  titulo:"Logística de la misión",
+  nota:"Sin esto, las visitas no se sostienen.",
+  items:[
+    {q:"Van con chofer para los días 26 al 31", c:"Foshan, Dongguan, Nansha y Zhaoqing. Mismo vehículo toda la semana, con espacio para muestras."},
+    {q:"Intérprete de mandarín para las visitas técnicas", c:"En fábrica, los contactos comerciales hablan inglés; el personal de planta no."},
+    {q:"WeChat Pay o Alipay con tarjeta internacional", c:"Configurarlo ANTES de viajar. En China casi nadie acepta efectivo ni tarjeta extranjera."},
+    {q:"eSIM con roaming internacional o VPN", c:"Google, WhatsApp e Instagram están bloqueados en China. El roaming internacional los evade; el wifi del hotel no."},
+    {q:"Courier para muestras · cotizar desde Cantón", c:"Nueve fábricas generan mucho peso. Comparar contra el exceso de equipaje."},
+    {q:"Four Seasons: configuración de habitaciones y shuttle a Pazhou", c:"+86 20 8883 3888. Definir dos individuales o doble más sencilla."}
+  ]
+},
+{
+  titulo:"Ya resuelto",
+  nota:"Confirmado, no requiere acción.",
+  items:[
+    {q:"Visados de China · en la embajada", c:"Pasaportes de KJ, Mila y Yulmar en trámite."},
+    {q:"Four Seasons Guangzhou · 25 oct al 1 nov", c:"5 Zhujiang West Road, Tianhe. Siete noches, no seis."},
+    {q:"Park Hyatt Shanghai · 1 al 6 nov", c:"Shanghai World Financial Center, Pudong. Confirmación 6259.698.538, PIN 9608. Desayuno incluido. Pago en el hotel, en yuanes."},
+    {q:"Leeden Hotel Guangzhou · Yulmar", c:"6 Huacheng Road, a diez minutos a pie. Shuttle gratuito a la feria."},
+    {q:"Credenciales de Canton Fair · 140ª edición, Fase 2", c:"Del 23 al 27 de octubre, complejo de Pazhou."},
+    {q:"Vuelos Turkish de regreso", c:"TK 27 el 6 nov a las 22:55 desde Pudong; TK 223 el 7 nov a las 15:30 desde Estambul."}
+  ]
+}
+];
+
+/* ---------------------------------------------------------------
+   FOTOS
+   FOTOS_LOCALES = false  → las carga desde Wikimedia Commons.
+   FOTOS_LOCALES = true   → las carga desde la carpeta /img del repo.
+   Si una falla, intenta la otra vía y, si tampoco, muestra un
+   recuadro azul con el nombre del lugar.
+----------------------------------------------------------------*/
+const FOTOS_LOCALES = false;
+
+const slug = t => t.toLowerCase()
+  .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+  .replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+
+const REMOTA = f => 'https://commons.wikimedia.org/wiki/Special:FilePath/' + encodeURIComponent(f) + '?width=1000';
+const LOCAL  = t => 'img/' + slug(t) + '.jpg';
+
+function renderDias(DIAS){
+let html='';
+DIAS.forEach((d,i)=>{
+  let li='';
+  d.items.forEach(it=>{
+    const src1 = FOTOS_LOCALES ? LOCAL(it.t) : REMOTA(it.img);
+    const src2 = FOTOS_LOCALES ? REMOTA(it.img) : LOCAL(it.t);
+    const foto = it.img ? `<img class="foto" src="${src1}" data-alt="${src2}" alt="${it.pie||it.t}"
+        loading="lazy" referrerpolicy="no-referrer"
+        onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src=this.dataset.alt;}else{this.style.display='none';this.nextElementSibling.style.display='flex';}">
+      <div class="sinfoto">${it.t}</div>
+      ${it.pie?`<div class="pie">${it.pie}</div>`:''}` : '';
+    li+=`<li class="${it.comida?'comida':''}">
+      <span class="hora">${it.h}</span>
+      <div class="card">${foto}
+        <div class="cuerpo">
+          ${it.tipo?`<div class="tipo">${it.tipo}</div>`:''}
+          <h3>${it.t}</h3>
+          <p>${it.d}</p>
+          ${it.sitio?`<div class="sitio">${it.sitio}</div>`:''}
+          ${it.alerta?`<div class="alerta">${it.alerta}</div>`:''}
+          ${it.historia?`<div class="historia">${it.historia}</div>`:''}
+          ${it.suplente?`<div class="suplente">${it.suplente}</div>`:''}
+        </div>
+      </div></li>`;
+  });
+  html+=`<section class="panel" id="${d.id}">
+    <h2 class="titulo">${d.titulo}</h2>
+    <p class="bajada">${d.bajada}</p>
+    <span class="marca ${d.marcaDuro?'duro':''}">${d.marca}</span>${CLIMA[d.id]?`<span class="marca clima">${CLIMA[d.id]}</span>`:''}
+    <ul class="tl">${li}</ul>
+  </section>`;
+});
+return html;
+}
+
+function renderRes(GRUPOS,pref){
+let res=`<section class="panel" id="${pref}-res">
+  <h2 class="titulo">Reservas</h2>
+  <p class="bajada">Marcada quiere decir confirmada por escrito, con nombre y número de reserva guardados.</p>
+  <div class="barra"><span class="conteo" data-conteo="${pref}">0/0</span>
+  <span class="progreso"><i data-pbar="${pref}"></i></span></div>`;
+GRUPOS.forEach((g,gi)=>{
+  res+=`<div class="grupo"><h3>${g.titulo}</h3><p class="nota">${g.nota}</p>`;
+  g.items.forEach((it,ii)=>{
+    res+=`<label class="item" data-r="${pref}" data-k="${pref}${gi}-${ii}">
+      <input type="checkbox">
+      <span><span class="que">${it.q}</span><br><span class="como">${it.c}</span></span></label>`;
+  });
+  res+='</div>';
+});
+return res+'</section>';
+}
+
+const DATOS_LIS=`<section class="panel" id="lis-datos">
+  <h2 class="titulo">Datos del tramo</h2>
+  <p class="bajada">Lo que hay que tener a mano y lo que todavía falta confirmar.</p>
+
+  <div class="bloque"><h3>Vuelos y alojamiento</h3>
+  <table>
+    <tr><th>Llegada</th><td><b>Mar 13 oct, 10:50</b> · TP 3185 · Aeropuerto Humberto Delgado</td></tr>
+    <tr><th>Salida</th><td><b>Dom 18 oct, 12:55</b> <span class="falta">[verificar]</span> · Lisboa a Roma Fiumicino, llegada 16:45</td></tr>
+    <tr><th>Hotel</th><td><b>NH Collection Lisboa Liberdade</b> · Avenida da Liberdade<br>Habitación para tres: <span class="falta">confirmar que sean tres camas reales</span></td></tr>
+    <tr><th>Nombre en reservas</th><td><b>KATEHRINE JANJI</b> · grafía exacta del pasaporte, sin corregir</td></tr>
+  </table></div>
+
+  <div class="bloque"><h3>Cómo se mueve el grupo</h3>
+  <ul class="limpia">
+    <li><b>Sin carro alquilado.</b> Estacionar en Sintra es impracticable, los peajes electrónicos exigen tarjeta de crédito internacional y alguien tendría que manejar en vez de disfrutar.</li>
+    <li><b>Chofer privado los días 15 y 17.</b> Deja al grupo en la puerta de cada sitio y espera, incluidas las dos horas de quads en Guincho.</li>
+    <li><b>Quinta da Regaleira queda fuera</b> para dar espacio a los quads: eran túneles, escaleras húmedas y desnivel continuo, y ya estaba marcada como opcional.</li>
+    <li><b>Dentro de Lisboa: taxi o Bolt.</b> Nunca subir la Avenida caminando.</li>
+    <li><b>Mila camina poco.</b> Cuatro de los cinco días son planos. El único con subida real es el 15, y se resuelve con el autobús interno del parque de Pena.</li>
+    <li><b>Oporto queda fuera.</b> Son tres horas de tren por vía y exigiría una noche fuera, es decir sacrificar Fátima o Sintra; además su casco histórico es más empinado que el de Lisboa. Se compensa con Nazaré y Óbidos el día 17.</li>
+  </ul></div>
+
+  <div class="bloque"><h3>Clima y vestimenta</h3>
+  <p class="bajada" style="margin-bottom:10px">Promedios históricos de Lisboa en octubre. Verificar el pronóstico real entre el 3 y el 5 de octubre, no antes.</p>
+  <table>
+    <tr><th>Temperatura</th><td><b>22° de día · 16° de noche.</b> Nada de frío real, pero tampoco calor de playa.</td></tr>
+    <tr><th>Lluvia</th><td>Octubre arranca la temporada: llueve entre 8 y 10 días del mes, en chubascos cortos. Hay que contar con uno.</td></tr>
+    <tr><th>Mar</th><td>Unos 19°. Se puede mojar los pies en Cascais y Nazaré, no bañarse.</td></tr>
+    <tr><th>Luz</th><td>Anochece cerca de las 19:00. El 17, en Fátima y Nazaré, el día alcanza bien.</td></tr>
+    <tr><th>Qué llevar</th><td>Capas: manga larga ligera y un abrigo mediano o cortavientos para la noche. <b>Paraguas plegable o impermeable con capucha.</b> Zapato cerrado con suela de goma: la calçada portuguesa es piedra pulida y resbala cuando llueve.</td></tr>
+    <tr><th>Ojo con dos días</th><td><b>El 15 en Guincho y Cabo da Roca el viento es fuerte de verdad</b>, y se siente tres o cuatro grados menos: cortavientos y el pelo recogido. <b>El 17 al norte amanece más fresco</b>, sobre 13°, y la explanada de Fátima está descubierta.</td></tr>
+    <tr><th>Iglesias</th><td>Jerónimos y Fátima piden hombros y rodillas cubiertos. Un pañuelo grande en el bolso lo resuelve.</td></tr>
+  </table></div>
+
+  <div class="bloque costos"><h3>Costos estimados</h3>
+  <p class="bajada" style="margin-bottom:10px">Completar con las cotizaciones reales. El total se calcula solo.</p>
+  <table data-costos="lis">
+    <tr><th>Chofer día 15 · Sintra, Cabo da Roca, Cascais</th><td><input type="number" value="0"> €</td></tr>
+    <tr><th>Chofer día 17 · Fátima, Nazaré, Óbidos</th><td><input type="number" value="0"> €</td></tr>
+    <tr><th>Traslados de aeropuerto (llegada y salida)</th><td><input type="number" value="0"> €</td></tr>
+    <tr><th>Entradas · Pena, Jerónimos, MAAT</th><td><input type="number" value="0"> €</td></tr>
+    <tr><th>Quads en Guincho · 15 oct</th><td><input type="number" value="0"> €</td></tr>
+    <tr><th>Cena Belcanto · 3 personas</th><td><input type="number" value="0"> €</td></tr>
+    <tr><th>Cena Fifty Seconds · 3 personas</th><td><input type="number" value="0"> €</td></tr>
+    <tr><th>Resto de comidas del tramo</th><td><input type="number" value="0"> €</td></tr>
+    <tr><th>Tuk-tuk, taxis y propinas</th><td><input type="number" value="0"> €</td></tr>
+    <tr><th>Compras</th><td><input type="number" value="0"> €</td></tr>
+    <tr><th style="padding-top:14px">Total del tramo Portugal</th><td style="padding-top:14px"><span class="total" data-total="lis">0 €</span></td></tr>
+  </table></div>
+</section>`;
+
+const DATOS_ITA=`<section class="panel" id="ita-datos">
+  <h2 class="titulo">Datos del tramo</h2>
+  <p class="bajada">Vuelos, hoteles y trenes de Italia.</p>
+
+  <div class="bloque"><h3>Vuelos y trenes</h3>
+  <table>
+    <tr><th>Llegada a Roma</th><td><b>Dom 18 oct, 16:45</b> · desde Lisboa · Fiumicino</td></tr>
+    <tr><th>Tren de ida</th><td><b>Mié 21 oct, 07:50</b> · Roma Termini → Venezia Mestre → Pordenone</td></tr>
+    <tr><th>Tren de vuelta</th><td><b>Vie 23 oct, ~14:30</b> · Pordenone → Mestre → Roma Termini, llegada ~19:30</td></tr>
+    <tr><th>Salida de Italia</th><td><b>Sáb 24 oct, 10:55</b> · TK 1862, Fiumicino Terminal 3 → Estambul 14:45</td></tr>
+    <tr><th>Sigue</th><td><b>Dom 25 oct, 01:20</b> · TK 72, Estambul → Cantón, llegada 16:50</td></tr>
+    <tr><th>Código de reserva</th><td><b>DKKOXH</b> · Turkish Airlines, Business, 40 kg</td></tr>
+  </table></div>
+
+  <div class="bloque"><h3>Alojamiento</h3>
+  <table>
+    <tr><th>Roma · 18 al 21 oct</th><td><b>NH Collection Roma Giustiniano</b><br>Via Virgilio 1, Prati · +39 06 68281601<br>Reserva 0203091557 · Jr. Suite Double View Terrace, 3 adultas, con desayuno<br><span class="falta">Confirmar tres camas reales</span></td></tr>
+    <tr><th>Pordenone · 21 al 23 oct</th><td><b>Apartamento de Cristina (Airbnb)</b><br>Via Edoardo Bassini 1 · check-in 16:00, check-out 11:00<br><span class="falta">Pedir dejar equipaje antes de las 16:00</span></td></tr>
+    <tr><th>Roma · 23 al 24 oct</th><td><b>NH Collection Roma Giustiniano</b><br>Reserva 0203091558 · una noche</td></tr>
+  </table></div>
+
+  <div class="bloque"><h3>Cómo se mueve el grupo</h3>
+  <ul class="limpia">
+    <li><b>SICAM es del 20 al 23 de octubre.</b> Llegando el 21 se pierde el día de apertura. La feria útil es: tarde del 21, día completo el 22 y mañana del 23.</li>
+    <li><b>Las maletas grandes se quedan en el NH de Roma</b> mientras van a Pordenone. A Friuli van solo con equipaje de cabina.</li>
+    <li><b>El hotel está en Prati</b>, a diez minutos a pie de San Pedro. Barrio plano y de calles anchas. La cena del cumpleaños es al otro lado del río, en Via Veneto: unos 15 minutos en taxi.</li>
+    <li><b>El tren del 23 va en tarifa Economy</b> para poder cambiarlo si la feria se alarga. El del 21 va en Super Economy porque ese día es fijo.</li>
+    <li><b>El 24 no admite improvisación:</b> el vuelo sale a las 10:55 y el taxi debe salir del hotel a las 7:00.</li>
+  </ul></div>
+
+  <div class="bloque"><h3>Clima y vestimenta</h3>
+  <p class="bajada" style="margin-bottom:10px">Este tramo tiene dos climas distintos y es el error de equipaje más fácil de cometer.</p>
+  <table>
+    <tr><th>Roma · 18 al 20 y 24 oct</th><td><b>22° de día · 12° de noche.</b> Días agradables de sol, noches claramente frescas.</td></tr>
+    <tr><th>Pordenone · 21 al 23 oct</th><td><b>17° de día · 8° de noche.</b> Friuli está al pie de los Alpes: son cinco grados menos de día y cuatro menos de noche que Roma, con humedad y niebla matinal.</td></tr>
+    <tr><th>La trampa</th><td>Se empaca pensando en Roma y se llega a Pordenone con ropa insuficiente. <b>Un abrigo de verdad, no un cortavientos</b>, más bufanda. En la feria se camina en pabellones fríos todo el día.</td></tr>
+    <tr><th>La cena del 20</th><td>Settimo es <b>terraza al aire libre y a las 19:30 hay 13 o 14 grados.</b> Vestido elegante sí, pero con abrigo o estola que combine: no se disfruta una cena de tres horas temblando.</td></tr>
+    <tr><th>Luz</th><td>Anochece en Roma cerca de las 18:15 y en Pordenone antes, sobre las 18:05.</td></tr>
+    <tr><th>Calzado</th><td>Roma es adoquín irregular y la Vía Appia son piedras de dos mil años: suela gruesa y plana, nada de tacón. Para la feria, zapato de caminar: son 20.000 m².</td></tr>
+    <tr><th>San Pedro</th><td>Código de vestimenta estricto: hombros y rodillas cubiertos, o no dejan entrar.</td></tr>
+  </table></div>
+
+  <div class="bloque costos"><h3>Costos estimados</h3>
+  <p class="bajada" style="margin-bottom:10px">Completar con las cotizaciones reales. El total se calcula solo.</p>
+  <table data-costos="ita">
+    <tr><th>Trenes del 21 · 3 personas, dos tramos</th><td><input type="number" value="0"> €</td></tr>
+    <tr><th>Trenes del 23 · 3 personas, dos tramos</th><td><input type="number" value="0"> €</td></tr>
+    <tr><th>Traslado Fiumicino → hotel, 18 oct</th><td><input type="number" value="0"> €</td></tr>
+    <tr><th>Taxi hotel → Fiumicino, 24 oct</th><td><input type="number" value="0"> €</td></tr>
+    <tr><th>Cena de cumpleaños · Settimo, 3 personas</th><td><input type="number" value="0"> €</td></tr>
+    <tr><th>Taxi de la Roma nocturna, 20 oct</th><td><input type="number" value="0"> €</td></tr>
+    <tr><th>Comidas del tramo</th><td><input type="number" value="0"> €</td></tr>
+    <tr><th>Gastos de feria · taxis, catálogos, envíos</th><td><input type="number" value="0"> €</td></tr>
+    <tr><th>Compras</th><td><input type="number" value="0"> €</td></tr>
+    <tr><th style="padding-top:14px">Total del tramo Italia</th><td style="padding-top:14px"><span class="total" data-total="ita">0 €</span></td></tr>
+  </table></div>
+</section>`;
+
+const DATOS_CHI=`<section class="panel" id="chi-datos">
+  <h2 class="titulo">Datos del tramo</h2>
+  <p class="bajada">Vuelos, hoteles y logística de la Misión China 2026.</p>
+
+  <div class="bloque"><h3>Quiénes viajan</h3>
+  <table>
+    <tr><th>A China</th><td><b>Katehrine Janji · Milagros Sánchez · Yulmar Gutiérrez</b></td></tr>
+    <tr><th>Angie</th><td>Regresa a Venezuela el <b>24 de octubre</b>: UX 1040 Roma 10:30 → Madrid, y UX 71 Madrid 16:20 → Caracas 19:35. Código JDEULS. No continúa a Asia.</td></tr>
+    <tr><th>Yulmar</th><td>Llega por su cuenta desde Caracas vía Doha, el 25 de octubre. Se hospeda aparte.</td></tr>
+  </table></div>
+
+  <div class="bloque"><h3>Vuelos</h3>
+  <table>
+    <tr><th>Llegada a Cantón</th><td><b>Dom 25 oct, 16:50</b> · TK 72 desde Estambul · Aeropuerto Baiyun</td></tr>
+    <tr><th>Vuelo interno</th><td><b>Dom 1 nov, mañana</b> · Cantón → Shanghái Hongqiao · <span class="falta">por comprar</span></td></tr>
+    <tr><th>Salida de China</th><td><b>Vie 6 nov, 22:55</b> · TK 27 desde Pudong Terminal 2 → Estambul 06:00</td></tr>
+    <tr><th>Regreso</th><td><b>Sáb 7 nov, 15:30</b> · TK 223 Estambul → Caracas, llegada 21:25</td></tr>
+    <tr><th>Código de reserva</th><td><b>DKKOXH</b> · Turkish Airlines, Business, 40 kg</td></tr>
+  </table></div>
+
+  <div class="bloque"><h3>Alojamiento</h3>
+  <table>
+    <tr><th>Cantón · 25 oct al 1 nov</th><td><b>Four Seasons Hotel Guangzhou</b><br>5 Zhujiang West Road, Zhujiang New Town, Tianhe · +86 20 8883 3888<br>Siete noches. <span class="falta">Definir configuración de habitaciones</span></td></tr>
+    <tr><th>Cantón · Yulmar</th><td><b>Leeden Hotel Guangzhou</b><br>6 Huacheng Road · +86 20 8391 3333 · shuttle gratuito a la feria</td></tr>
+    <tr><th>Shanghái · 1 al 6 nov</th><td><b>Park Hyatt Shanghai</b><br>Shanghai World Financial Center, 100 Century Avenue, Pudong · +86 21 3855 1508<br>Confirmación 6259.698.538 · PIN 9608 · cinco noches con desayuno<br>King Room with Pearl Tower River View · <span class="falta">1 habitación para 2 adultos, con UNA cama</span><br>Cancelación gratuita hasta el 30 de octubre a las 23:59</td></tr>
+  </table></div>
+
+  <div class="bloque"><h3>Feria y fábricas</h3>
+  <ul class="limpia">
+    <li><b>Canton Fair, 140ª edición</b>, no la 139ª: esa fue la de primavera. Fase 2 del 23 al 27 de octubre, en el complejo de Pazhou.</li>
+    <li><b>La Fase 2 es la correcta</b> para TCC: muebles, productos del hogar, decoración y materiales de construcción.</li>
+    <li><b>Se pierden la Fase 1</b>, del 15 al 19, que es la de herrajes y maquinaria. Lo compensan las visitas directas a fábrica.</li>
+    <li><b>Nueve visitas técnicas</b>, cinco confirmadas con hora y cuatro pendientes.</li>
+    <li><b>El 30 de octubre es el día frágil:</b> Nanhai por la mañana y Zhaoqing por la tarde, con más de 100 km entre medio. Si la primera se alarga, la segunda se cae.</li>
+  </ul></div>
+
+  <div class="bloque"><h3>Práctico</h3>
+  <ul class="limpia">
+    <li><b>Pagos:</b> configurar WeChat Pay o Alipay con tarjeta internacional antes de viajar. En China casi nadie acepta efectivo ni tarjeta extranjera.</li>
+    <li><b>Internet:</b> Google, WhatsApp e Instagram están bloqueados. El roaming internacional los evade; el wifi del hotel no.</li>
+    <li><b>Diferencia horaria:</b> China va 12 horas adelante de Venezuela.</li>
+    <li><b>Clima:</b> Cantón en octubre es caluroso y húmedo; Shanghái en noviembre es fresco. Hay que empacar para las dos cosas.</li>
+  </ul></div>
+
+  <div class="bloque"><h3>Clima y vestimenta</h3>
+  <p class="bajada" style="margin-bottom:10px">El salto de Cantón a Shanghái son diez grados en un vuelo de dos horas y media.</p>
+  <table>
+    <tr><th>Cantón · 25 oct al 1 nov</th><td><b>29° de día · 21° de noche, con humedad muy alta.</b> Es subtropical: se siente más caluroso de lo que marca el termómetro y se transpira caminando.</td></tr>
+    <tr><th>Shanghái · 1 al 6 nov</th><td><b>18° de día · 11° de noche.</b> Fresco de verdad, con viento sobre el río Huangpu.</td></tr>
+    <tr><th>Cómo se resuelve</th><td>La ropa de Cantón y la de Shanghái no se parecen. Empacar los dos climas separados en la maleta: <b>lo de Cantón arriba y lo de Shanghái abajo</b>, para no desarmar todo el 1 de noviembre.</td></tr>
+    <tr><th>Visitas a fábrica</th><td>Siete días de planta industrial: pantalón, manga que cubra, zapato cerrado de suela gruesa y antideslizante. <b>Nada de sandalias ni tacón</b>: hay maquinaria, aserrín, aceite y pisos mojados. Ropa que transpire, porque las plantas de Foshan no están climatizadas.</td></tr>
+    <tr><th>Feria y aire acondicionado</th><td>Pazhou está a 29° afuera y muy frío adentro. Una chaqueta ligera en el bolso, todos los días.</td></tr>
+    <tr><th>Disney · 4 nov</th><td>Día completo al aire libre a 18° de día y 10° al caer la tarde. <b>Capas, y algo impermeable:</b> noviembre en Shanghái tiene lluvia dispersa y no hay dónde guarecerse en las colas.</td></tr>
+    <tr><th>Luz</th><td>Anochece temprano: en Cantón sobre las 17:50 y en Shanghái cerca de las 17:00. Los regresos de fábrica se hacen de noche.</td></tr>
+    <tr><th>Verificar</th><td>El pronóstico real de Cantón, entre el 15 y el 18 de octubre. Aunque la temporada de tifones ya está cerrando, en octubre todavía puede pasar alguno por Guangdong.</td></tr>
+  </table></div>
+
+  <div class="bloque costos"><h3>Costos estimados</h3>
+  <p class="bajada" style="margin-bottom:10px">Completar con las cotizaciones reales. El total se calcula solo.</p>
+  <table data-costos="chi">
+    <tr><th>Vuelo interno Cantón → Shanghái · 3 personas</th><td><input type="number" value="0"> $</td></tr>
+    <tr><th>Hotel Shanghái · 5 noches (reservado)</th><td><input type="number" value="2747"> $</td></tr>
+    <tr><th>Segunda habitación en Shanghái · por definir</th><td><input type="number" value="0"> $</td></tr>
+    <tr><th>Van con chofer · 26 al 31 de octubre</th><td><input type="number" value="0"> $</td></tr>
+    <tr><th>Intérprete de mandarín</th><td><input type="number" value="0"> $</td></tr>
+    <tr><th>Traslados de aeropuerto</th><td><input type="number" value="0"> $</td></tr>
+    <tr><th>Entradas de Disney · 3 personas</th><td><input type="number" value="0"> $</td></tr>
+    <tr><th>Comidas del tramo</th><td><input type="number" value="0"> $</td></tr>
+    <tr><th>Courier de muestras</th><td><input type="number" value="0"> $</td></tr>
+    <tr><th>Compras</th><td><input type="number" value="0"> $</td></tr>
+    <tr><th style="padding-top:14px">Total del tramo China</th><td style="padding-top:14px"><span class="total" data-total="chi">0 $</span></td></tr>
+  </table></div>
+</section>`;
+
+const REGIONES=[
+  {id:"lis", nombre:"Lisboa", fechas:"13 al 18 de octubre de 2026 · cinco días y medio",
+   hero:[["Mar 13 · 10:50","Llegada a Lisboa · TP 3185"],["Dom 18 · 12:55","Salida a Roma · llega FCO 16:45"],["NH Collection Lisboa Liberdade","Avenida da Liberdade"]],
+   dias:LISBOA, res:RES_LIS, datos:DATOS_LIS},
+  {id:"ita", nombre:"Italia", fechas:"18 al 24 de octubre de 2026 · Roma y Pordenone",
+   hero:[["Dom 18 · 16:45","Llegada a Roma Fiumicino"],["Mié 21 · 07:50","Tren a Pordenone · SICAM"],["Sáb 24 · 10:55","TK 1862 a Estambul"]],
+   dias:ITALIA, res:RES_ITA, datos:DATOS_ITA},
+  {id:"chi", nombre:"China", fechas:"25 de octubre al 6 de noviembre de 2026 · Cantón y Shanghái",
+   hero:[["Dom 25 · 16:50","Llegada a Cantón · TK 72"],["Dom 1 nov","Vuelo interno a Shanghái"],["Vie 6 nov · 22:55","TK 27 desde Pudong"]],
+   dias:CHINA, res:RES_CHI, datos:DATOS_CHI}
+];
+
+const nav1=document.getElementById('nav1'), nav2=document.getElementById('nav'), cont=document.getElementById('paneles');
+
+cont.innerHTML = REGIONES.map(r =>
+  renderDias(r.dias) + (r.res?renderRes(r.res,r.id):'') + r.datos
+).join('');
+
+nav1.innerHTML = REGIONES.map((r,i)=>
+  `<button data-r="${r.id}" class="${i===0?'on':''} ${r.pendiente?'pendiente':''}">${r.nombre}</button>`).join('');
+
+function abrirPanel(id){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id===id));
+  document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.p===id));
+}
+
+function abrirRegion(rid){
+  const r=REGIONES.find(x=>x.id===rid);
+  document.getElementById('h-titulo').textContent=r.nombre;
+  document.getElementById('h-fechas').textContent=r.fechas;
+  document.getElementById('h-datos').innerHTML=r.hero.map(([a,b])=>`<div><b>${a}</b>${b}</div>`).join('');
+  nav1.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.r===rid));
+  nav2.innerHTML = r.dias.map(d=>`<button data-p="${d.id}">${d.nav} oct<span class="dia">${d.dow}</span></button>`).join('')
+    + (r.res?`<button data-p="${r.id}-res">Reservas<span class="dia">Control</span></button>`:'')
+    + `<button data-p="${r.id}-datos">Datos<span class="dia">Vuelos y hoteles</span></button>`;
+  abrirPanel(r.dias.length ? r.dias[0].id : r.id+'-datos');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+nav1.addEventListener('click',e=>{ const b=e.target.closest('button'); if(b) abrirRegion(b.dataset.r); });
+nav2.addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  abrirPanel(b.dataset.p);
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+abrirRegion('lis');
+
+const mem={};
+const guardar=(k,v)=>{ try{ localStorage.setItem('lx_'+k,v?'1':''); }catch(e){ mem[k]=v; } };
+const leer=k=>{ try{ return localStorage.getItem('lx_'+k)==='1'; }catch(e){ return !!mem[k]; } };
+
+document.querySelectorAll('.item').forEach(l=>{
+  const k=l.dataset.k, cb=l.querySelector('input');
+  cb.checked=leer(k); l.classList.toggle('listo',cb.checked);
+  cb.addEventListener('change',()=>{ l.classList.toggle('listo',cb.checked); guardar(k,cb.checked); contar(l.dataset.r); });
+});
+function contar(r){
+  if(!r) return REGIONES.forEach(x=>{ if(x.res) contar(x.id); });
+  const items=document.querySelectorAll(`.item[data-r="${r}"] input`);
+  const c=[...items].filter(i=>i.checked).length;
+  const et=document.querySelector(`[data-conteo="${r}"]`), eb=document.querySelector(`[data-pbar="${r}"]`);
+  if(et) et.textContent=c+'/'+items.length;
+  if(eb) eb.style.width=(items.length?c/items.length*100:0)+'%';
+}
+contar();
+
+document.querySelectorAll('[data-costos]').forEach(tc=>{
+  tc.addEventListener('input',()=>{
+    let s=0; tc.querySelectorAll('input').forEach(i=>s+=parseFloat(i.value)||0);
+    document.querySelector(`[data-total="${tc.dataset.costos}"]`).textContent=s.toLocaleString('es-ES')+' €';
+  });
+});
+</script>
+</body>
+</html>
